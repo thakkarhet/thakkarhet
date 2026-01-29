@@ -3,25 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio of Excellence — Technical Data Science Manager</title>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Libre+Baskerville:wght@400;700&family=Quattrocento:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Data Science Manager — Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --aged-paper: #f8f6f0;
-            --deep-ink: #1c1410;
-            --charcoal: #2a2520;
-            --wine: #6b2d2d;
-            --antique-gold: #b8935e;
-            --forest: #3d4f3a;
-            --slate: #545454;
-            --sepia: #e6dfd0;
-            --cream: #faf8f3;
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #ffffff;
+            --surface: #fafafa;
+            --text: #000000;
+            --text-secondary: #404040;
+            --text-muted: #a0a0a0;
+            --accent: #0000ff;
+            --border: #e0e0e0;
+            --border-dark: #000000;
         }
 
         html {
@@ -29,787 +28,617 @@
         }
 
         body {
-            background: var(--aged-paper);
-            color: var(--deep-ink);
-            font-family: 'EB Garamond', serif;
-            font-size: 18px;
-            line-height: 1.75;
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        /* Sophisticated paper texture */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
-            pointer-events: none;
-            z-index: 1;
-            opacity: 0.4;
-        }
-
-        /* Subtle vignette */
-        body::after {
-            content: '';
-            position: fixed;
-            top: -10%;
-            left: -10%;
-            width: 120%;
-            height: 120%;
-            background: radial-gradient(
-                ellipse at center,
-                transparent 40%,
-                rgba(28, 20, 16, 0.12) 100%
-            );
-            pointer-events: none;
-            z-index: 1;
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 4rem;
-            position: relative;
-            z-index: 2;
+            padding: 0 3rem;
         }
 
-        /* Elegant header with serif emphasis */
+        /* Header */
         header {
-            padding: 3rem 0;
-            animation: fadeInDown 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-        }
-
-        header::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60%;
-            height: 1px;
-            background: linear-gradient(
-                to right,
-                transparent,
-                var(--antique-gold) 20%,
-                var(--antique-gold) 80%,
-                transparent
-            );
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            border-bottom: 2px solid var(--border-dark);
+            background: var(--bg);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 900px;
-            margin: 0 auto;
+            height: 80px;
         }
 
         .logo {
-            font-family: 'Libre Baskerville', serif;
-            font-size: 1.4rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1rem;
             font-weight: 700;
-            color: var(--wine);
-            letter-spacing: 3px;
+            color: var(--text);
             text-transform: uppercase;
-            position: relative;
-        }
-
-        .logo::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background: var(--antique-gold);
+            letter-spacing: 2px;
+            border: 2px solid var(--border-dark);
+            padding: 0.5rem 1rem;
         }
 
         nav ul {
             display: flex;
-            gap: 3rem;
+            gap: 0;
             list-style: none;
         }
 
         nav a {
-            color: var(--charcoal);
+            color: var(--text);
             text-decoration: none;
-            font-family: 'Lato', sans-serif;
-            font-size: 0.8rem;
-            font-weight: 400;
-            letter-spacing: 1.5px;
+            font-size: 0.875rem;
+            font-weight: 600;
             text-transform: uppercase;
-            position: relative;
-            transition: color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            letter-spacing: 1px;
+            padding: 1rem 1.5rem;
+            border-left: 1px solid var(--border);
+            transition: all 0.2s ease;
         }
 
-        nav a::before {
-            content: '';
-            position: absolute;
-            bottom: -6px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 1px;
-            background: var(--wine);
-            transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        nav li:first-child a {
+            border-left: none;
         }
 
         nav a:hover {
-            color: var(--wine);
+            background: var(--text);
+            color: var(--bg);
         }
 
-        nav a:hover::before {
-            width: 100%;
-        }
-
-        /* Hero section with literary emphasis */
+        /* Hero */
         .hero {
-            padding: 6rem 0 5rem;
-            max-width: 900px;
-            margin: 0 auto;
-            animation: fadeIn 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
-            text-align: center;
+            padding: 8rem 0 6rem;
+            border-bottom: 2px solid var(--border-dark);
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 4rem;
+            align-items: start;
         }
 
-        .hero-ornament {
-            width: 80px;
-            height: 1px;
-            background: var(--antique-gold);
-            margin: 0 auto 2rem;
-            position: relative;
+        .hero-content h1 {
+            font-size: clamp(3rem, 7vw, 6rem);
+            font-weight: 900;
+            line-height: 0.95;
+            letter-spacing: -3px;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
         }
 
-        .hero-ornament::before,
-        .hero-ornament::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            width: 6px;
-            height: 6px;
-            background: var(--antique-gold);
-            border-radius: 50%;
-            transform: translateY(-50%);
-        }
-
-        .hero-ornament::before {
-            left: -12px;
-        }
-
-        .hero-ornament::after {
-            right: -12px;
-        }
-
-        .hero h1 {
-            font-family: 'Libre Baskerville', serif;
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
-            line-height: 1.3;
-            margin-bottom: 1.5rem;
-            color: var(--deep-ink);
-            letter-spacing: -0.5px;
-        }
-
-        .hero .title-accent {
+        .hero-content .accent-line {
             display: block;
-            font-size: clamp(1.8rem, 4vw, 3rem);
-            color: var(--wine);
-            font-style: italic;
-            font-weight: 400;
-            margin-top: 0.5rem;
+            color: var(--accent);
         }
 
-        .hero .subtitle {
-            font-size: 1.15rem;
-            color: var(--forest);
-            font-style: italic;
-            margin-bottom: 2.5rem;
-            font-weight: 500;
-            letter-spacing: 0.5px;
+        .hero-subtitle {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .hero-summary {
-            font-size: 1.1rem;
-            color: var(--charcoal);
-            line-height: 1.9;
+        .hero-description {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
             margin-bottom: 3rem;
-            max-width: 750px;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: left;
-            padding: 2rem 2.5rem;
-            background: var(--sepia);
-            border-left: 3px solid var(--wine);
-            box-shadow: 0 2px 20px rgba(28, 20, 16, 0.08);
         }
 
-        .hero-summary strong {
-            color: var(--wine);
+        .hero-stats {
+            border: 2px solid var(--border-dark);
+            background: var(--surface);
+        }
+
+        .stat-item {
+            padding: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .stat-item:last-child {
+            border-bottom: none;
+        }
+
+        .stat-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
             font-weight: 600;
         }
 
         .cta-group {
             display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            margin-top: 3rem;
+            gap: 0;
         }
 
-        .cta-button {
+        .btn {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 2.5rem;
-            background: var(--wine);
-            color: var(--cream);
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1.25rem 2rem;
             text-decoration: none;
-            font-family: 'Lato', sans-serif;
-            font-size: 0.85rem;
             font-weight: 700;
-            letter-spacing: 1.5px;
+            font-size: 0.875rem;
+            transition: all 0.2s ease;
+            border: 2px solid var(--border-dark);
             text-transform: uppercase;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-            border: 2px solid var(--wine);
-            overflow: hidden;
+            letter-spacing: 1.5px;
         }
 
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--deep-ink);
-            transition: left 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            z-index: 0;
+        .btn-primary {
+            background: var(--accent);
+            color: var(--bg);
         }
 
-        .cta-button:hover::before {
-            left: 0;
+        .btn-primary:hover {
+            background: var(--text);
         }
 
-        .cta-button span {
-            position: relative;
-            z-index: 1;
+        .btn-secondary {
+            background: var(--bg);
+            color: var(--text);
+            border-left: none;
         }
 
-        .cta-button:hover {
-            border-color: var(--deep-ink);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(28, 20, 16, 0.25);
+        .btn-secondary:hover {
+            background: var(--surface);
         }
 
-        .cta-button.secondary {
-            background: transparent;
-            color: var(--wine);
-            border: 2px solid var(--wine);
-        }
-
-        .cta-button.secondary::before {
-            background: var(--wine);
-        }
-
-        .cta-button.secondary:hover {
-            color: var(--cream);
-            border-color: var(--wine);
-        }
-
-        /* Section divider */
-        .section-divider {
-            text-align: center;
-            margin: 5rem 0;
-            position: relative;
-        }
-
-        .section-divider::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(
-                to right,
-                transparent,
-                var(--antique-gold) 40%,
-                var(--antique-gold) 60%,
-                transparent
-            );
-            transform: translateY(-50%);
-        }
-
-        .section-divider-ornament {
-            display: inline-block;
-            background: var(--aged-paper);
-            padding: 0 2rem;
-            color: var(--antique-gold);
-            font-size: 1.2rem;
-            letter-spacing: 1rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Experience Section */
-        .experience {
-            padding: 3rem 0 5rem;
-            animation: fadeIn 1.6s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
+        /* Section */
+        .section {
+            padding: 6rem 0;
+            border-bottom: 2px solid var(--border-dark);
         }
 
         .section-header {
-            text-align: center;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 4rem;
             margin-bottom: 4rem;
-            position: relative;
+            align-items: start;
         }
 
-        .section-label {
-            font-family: 'Lato', sans-serif;
-            font-size: 0.75rem;
+        .section-meta {
+            position: sticky;
+            top: 100px;
+        }
+
+        .section-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1rem;
             font-weight: 700;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--antique-gold);
+            color: var(--text-muted);
             margin-bottom: 1rem;
+            letter-spacing: 2px;
         }
 
         .section-title {
-            font-family: 'Libre Baskerville', serif;
-            font-size: 2.8rem;
-            font-weight: 700;
-            color: var(--deep-ink);
-            letter-spacing: -0.5px;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--text);
+            letter-spacing: -1px;
+            text-transform: uppercase;
             margin-bottom: 1rem;
         }
 
         .section-description {
-            font-size: 1.1rem;
-            color: var(--slate);
-            font-style: italic;
-            max-width: 650px;
-            margin: 0 auto;
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
         }
 
-        .timeline {
-            position: relative;
-            max-width: 1000px;
-            margin: 0 auto;
+        /* Experience Cards */
+        .experience-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
         }
 
-        /* Vertical timeline line */
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 40px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(
-                to bottom,
-                var(--antique-gold),
-                var(--sepia)
-            );
+        .experience-item {
+            border: 2px solid var(--border-dark);
+            border-top: none;
+            background: var(--bg);
+            transition: all 0.3s ease;
         }
 
-        .experience-card {
-            position: relative;
-            margin-bottom: 4rem;
-            padding-left: 100px;
-            animation: slideInRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+        .experience-item:first-child {
+            border-top: 2px solid var(--border-dark);
         }
 
-        .experience-card:nth-child(1) { animation-delay: 0.1s; }
-        .experience-card:nth-child(2) { animation-delay: 0.3s; }
-        .experience-card:nth-child(3) { animation-delay: 0.5s; }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        /* Timeline dot */
-        .experience-card::before {
-            content: '';
-            position: absolute;
-            left: 32px;
-            top: 8px;
-            width: 18px;
-            height: 18px;
-            background: var(--wine);
-            border: 3px solid var(--aged-paper);
-            border-radius: 50%;
-            box-shadow: 0 0 0 3px var(--antique-gold);
-            z-index: 2;
-        }
-
-        .experience-content {
-            background: var(--cream);
-            padding: 2.5rem;
-            border: 1px solid rgba(184, 147, 94, 0.2);
-            box-shadow: 
-                0 2px 10px rgba(28, 20, 16, 0.06),
-                0 8px 30px rgba(28, 20, 16, 0.08);
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-        }
-
-        .experience-content::before {
-            content: '';
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            right: 15px;
-            bottom: 15px;
-            border: 1px solid rgba(184, 147, 94, 0.15);
-            pointer-events: none;
-        }
-
-        .experience-card:hover .experience-content {
-            transform: translateX(5px);
-            box-shadow: 
-                0 4px 20px rgba(28, 20, 16, 0.1),
-                0 12px 40px rgba(107, 45, 45, 0.15);
-            border-color: var(--wine);
+        .experience-item:hover {
+            transform: translateX(8px);
+            box-shadow: -8px 0 0 0 var(--accent);
         }
 
         .experience-header {
-            margin-bottom: 2rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 2px solid var(--sepia);
-            position: relative;
+            padding: 3rem;
+            border-bottom: 1px solid var(--border);
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 2rem;
+            align-items: start;
         }
 
-        .experience-header::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 80px;
-            height: 2px;
-            background: var(--wine);
-        }
-
-        .company-name {
-            font-family: 'Quattrocento', serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--wine);
-            margin-bottom: 0.4rem;
-            letter-spacing: -0.3px;
+        .company-title {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: -1px;
         }
 
         .role-title {
-            font-family: 'Lato', sans-serif;
             font-size: 1rem;
-            color: var(--forest);
-            font-weight: 400;
-            letter-spacing: 0.5px;
+            color: var(--text-secondary);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             margin-bottom: 0.5rem;
         }
 
-        .timeline-date {
-            font-family: 'Lato', sans-serif;
-            font-size: 0.85rem;
-            color: var(--slate);
-            font-weight: 300;
+        .date-range {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .experience-tag {
+            border: 2px solid var(--border-dark);
+            background: var(--accent);
+            color: var(--bg);
+            padding: 0.5rem 1rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        .impact-summary {
-            background: rgba(107, 45, 45, 0.06);
+        .experience-metrics {
+            padding: 2rem 3rem;
+            background: var(--surface);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+        }
+
+        .metric {
             padding: 1.5rem;
-            margin-bottom: 2rem;
-            border-left: 4px solid var(--wine);
-            font-style: italic;
-            color: var(--charcoal);
-            font-size: 1.05rem;
+            border-right: 1px solid var(--border);
+        }
+
+        .metric:last-child {
+            border-right: none;
+        }
+
+        .metric-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .experience-content {
+            padding: 3rem;
+        }
+
+        .experience-achievements {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .experience-achievements li {
+            padding-left: 2rem;
+            position: relative;
+            color: var(--text-secondary);
             line-height: 1.7;
         }
 
-        .impact-summary strong {
-            color: var(--wine);
-            font-weight: 600;
-            font-style: normal;
-        }
-
-        .achievements {
-            list-style: none;
-            margin-bottom: 2rem;
-        }
-
-        .achievements li {
-            padding-left: 2.5rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            color: var(--charcoal);
-            line-height: 1.8;
-            font-size: 1rem;
-        }
-
-        .achievements li::before {
-            content: '◆';
+        .experience-achievements li::before {
+            content: '■';
             position: absolute;
-            left: 0.5rem;
-            color: var(--antique-gold);
-            font-size: 0.9rem;
-            top: 0.1rem;
-        }
-
-        .achievements strong {
-            color: var(--wine);
-            font-weight: 600;
-        }
-
-        .tech-stack {
-            display: flex;
-            gap: 0.6rem;
-            flex-wrap: wrap;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(184, 147, 94, 0.2);
-        }
-
-        .tech-tag {
-            padding: 0.4rem 1rem;
-            background: var(--aged-paper);
-            color: var(--charcoal);
-            border: 1px solid var(--antique-gold);
-            font-family: 'Lato', sans-serif;
+            left: 0;
+            top: 0;
+            color: var(--text);
             font-size: 0.75rem;
-            font-weight: 400;
-            letter-spacing: 0.5px;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .tech-tag:hover {
-            background: var(--wine);
-            color: var(--cream);
-            border-color: var(--wine);
-            transform: translateY(-2px);
-        }
-
-        /* Skills Section */
-        .skills {
-            padding: 5rem 0;
-            background: var(--sepia);
-            margin: 5rem -4rem 0;
-            animation: fadeIn 1.8s cubic-bezier(0.16, 1, 0.3, 1) 0.9s both;
-        }
-
-        .skills .container {
-            padding: 0 4rem;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-            max-width: 1000px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .skill-card {
-            background: var(--cream);
-            padding: 2rem;
-            border: 1px solid rgba(184, 147, 94, 0.2);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-        }
-
-        .skill-card::before {
-            content: '';
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            right: 10px;
-            bottom: 10px;
-            border: 1px solid rgba(184, 147, 94, 0.15);
-            pointer-events: none;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .skill-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(28, 20, 16, 0.15);
-            border-color: var(--wine);
-        }
-
-        .skill-card:hover::before {
-            border-color: var(--wine);
-        }
-
-        .skill-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            display: block;
-        }
-
-        .skill-title {
-            font-family: 'Quattrocento', serif;
-            font-size: 1.3rem;
-            margin-bottom: 0.8rem;
-            color: var(--wine);
+        .experience-achievements strong {
+            color: var(--text);
             font-weight: 700;
         }
 
+        .tech-stack {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 0;
+            border: 1px solid var(--border);
+        }
+
+        .tech-tag {
+            padding: 1rem;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-left: none;
+            border-top: none;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+            text-transform: uppercase;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .tech-tag:hover {
+            background: var(--text);
+            color: var(--bg);
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            border: 2px solid var(--border-dark);
+        }
+
+        .skill-card {
+            padding: 3rem;
+            background: var(--bg);
+            border-right: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:nth-child(3n) {
+            border-right: none;
+        }
+
+        .skill-card:nth-child(n+4) {
+            border-bottom: none;
+        }
+
+        .skill-card:hover {
+            background: var(--text);
+            color: var(--bg);
+        }
+
+        .skill-card:hover .skill-icon {
+            background: var(--accent);
+        }
+
+        .skill-card:hover .skill-description,
+        .skill-card:hover .skill-list-item {
+            color: var(--bg);
+        }
+
+        .skill-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--surface);
+            border: 2px solid var(--border-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .skill-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+
+        .skill-card:hover .skill-title {
+            color: var(--bg);
+        }
+
         .skill-description {
-            color: var(--slate);
+            color: var(--text-secondary);
+            line-height: 1.6;
             font-size: 0.95rem;
-            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .skill-list-item {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .skill-list-item::before {
+            content: '▸ ';
+            color: var(--accent);
         }
 
         /* Footer */
         footer {
-            padding: 5rem 0 3rem;
-            text-align: center;
-            animation: fadeIn 2s cubic-bezier(0.16, 1, 0.3, 1) 1.2s both;
-            position: relative;
+            padding: 6rem 0 4rem;
         }
 
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60%;
-            height: 1px;
-            background: linear-gradient(
-                to right,
-                transparent,
-                var(--antique-gold) 20%,
-                var(--antique-gold) 80%,
-                transparent
-            );
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 4rem;
+            align-items: start;
         }
 
-        .footer-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .footer-title {
-            font-family: 'Quattrocento', serif;
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--wine);
+        .footer-info h2 {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--text);
             margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: -1px;
         }
 
-        .footer-subtitle {
-            font-size: 1.05rem;
-            color: var(--slate);
-            margin-bottom: 2.5rem;
-            font-style: italic;
+        .footer-info p {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
         }
 
-        .social-links {
+        .footer-contact {
+            border: 2px solid var(--border-dark);
+            background: var(--surface);
+        }
+
+        .contact-item {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border);
             display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 3rem;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            color: var(--text);
         }
 
-        .social-link {
-            width: 55px;
-            height: 55px;
+        .contact-item:last-child {
+            border-bottom: none;
+        }
+
+        .contact-item:hover {
+            background: var(--text);
+            color: var(--bg);
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--border-dark);
             display: flex;
             align-items: center;
             justify-content: center;
-            background: var(--cream);
-            color: var(--charcoal);
-            text-decoration: none;
-            font-size: 1.4rem;
-            border: 1px solid var(--antique-gold);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
+            font-size: 1.25rem;
+            background: var(--bg);
         }
 
-        .social-link::before {
-            content: '';
-            position: absolute;
-            top: 5px;
-            left: 5px;
-            right: 5px;
-            bottom: 5px;
-            border: 1px solid rgba(184, 147, 94, 0.15);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        .contact-item:hover .contact-icon {
+            background: var(--accent);
+            border-color: var(--accent);
         }
 
-        .social-link:hover {
-            background: var(--wine);
-            color: var(--cream);
-            border-color: var(--wine);
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(107, 45, 45, 0.25);
-        }
-
-        .social-link:hover::before {
-            border-color: var(--cream);
+        .contact-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
         }
 
         .copyright {
-            font-family: 'Lato', sans-serif;
-            font-size: 0.85rem;
-            color: var(--slate);
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        /* Responsive Design */
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-stats {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat-item {
+                border-right: 1px solid var(--border);
+                border-bottom: 1px solid var(--border);
+            }
+
+            .stat-item:nth-child(2n) {
+                border-right: none;
+            }
+
+            .stat-item:nth-child(n+3) {
+                border-bottom: none;
+            }
+
+            .section-header {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .section-meta {
+                position: static;
+            }
+        }
+
         @media (max-width: 768px) {
             .container {
-                padding: 0 2rem;
-            }
-
-            .skills {
-                margin: 5rem -2rem 0;
-            }
-
-            .skills .container {
-                padding: 0 2rem;
+                padding: 0 1.5rem;
             }
 
             nav {
                 flex-direction: column;
-                gap: 2rem;
+                height: auto;
+                padding: 1rem 0;
+                gap: 1rem;
             }
 
             nav ul {
-                gap: 1.5rem;
                 flex-wrap: wrap;
                 justify-content: center;
             }
@@ -818,316 +647,454 @@
                 padding: 4rem 0 3rem;
             }
 
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero .title-accent {
-                font-size: 1.5rem;
-            }
-
-            .hero-summary {
-                padding: 1.5rem;
+            .hero-content h1 {
+                font-size: 2.5rem;
             }
 
             .cta-group {
                 flex-direction: column;
-                align-items: stretch;
             }
 
-            .timeline::before {
-                left: 20px;
+            .btn-secondary {
+                border-left: 2px solid var(--border-dark);
+                border-top: none;
             }
 
-            .experience-card {
-                padding-left: 60px;
+            .hero-stats {
+                grid-template-columns: 1fr;
             }
 
-            .experience-card::before {
-                left: 12px;
+            .stat-item {
+                border-right: none;
             }
 
-            .experience-content {
-                padding: 1.5rem;
+            .experience-header {
+                grid-template-columns: 1fr;
             }
 
-            .company-name {
-                font-size: 1.5rem;
+            .experience-metrics {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .metric {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .metric:nth-child(2n) {
+                border-right: none;
+            }
+
+            .metric:nth-child(n+3) {
+                border-bottom: none;
             }
 
             .skills-grid {
                 grid-template-columns: 1fr;
             }
+
+            .skill-card {
+                border-right: none;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tech-stack {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
-        /* Print styles */
-        @media print {
-            body::before,
-            body::after {
-                display: none;
+        /* Dark mode */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #000000;
+                --surface: #0a0a0a;
+                --text: #ffffff;
+                --text-secondary: #a0a0a0;
+                --text-muted: #606060;
+                --accent: #0066ff;
+                --border: #1a1a1a;
+                --border-dark: #ffffff;
             }
 
-            .experience-card {
-                page-break-inside: avoid;
-            }
-
-            .cta-group,
-            .social-links {
-                display: none;
+            .contact-icon {
+                background: var(--surface);
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
+    <header>
+        <div class="container">
             <nav>
                 <div class="logo">Portfolio</div>
                 <ul>
                     <li><a href="#experience">Experience</a></li>
-                    <li><a href="#skills">Expertise</a></li>
+                    <li><a href="#skills">Skills</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-        </header>
+        </div>
+    </header>
 
+    <main>
         <section class="hero">
-            <div class="hero-ornament"></div>
-            <h1>
-                Technical Data Science Manager
-                <span class="title-accent">Architecting Intelligence at Scale</span>
-            </h1>
-            <p class="subtitle">Transforming Complex Algorithms into Revenue-Generating Products</p>
-            
-            <div class="hero-summary">
-                Data Science leader who scales AI products from <strong>0→1</strong>, driving measurable business outcomes. Transformed ML concepts into production systems generating <strong>$2M+ revenue lift</strong> across e-commerce and fintech. Expert in building high-performing teams and translating complex algorithms into executive-ready roadmaps.
-            </div>
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-content">
+                        <h1>
+                            Building<br>
+                            <span class="accent-line">AI Systems</span><br>
+                            That Scale
+                        </h1>
+                        <p class="hero-subtitle">Technical Data Science Manager</p>
+                        <p class="hero-description">
+                            Data Science leader who scales AI products from 0→1, driving measurable business outcomes. Transformed ML concepts into production systems generating $2M+ revenue lift across e-commerce and fintech. Expert in building high-performing teams and translating complex algorithms into executive-ready roadmaps.
+                        </p>
+                        <div class="cta-group">
+                            <a href="#contact" class="btn btn-primary">
+                                <span>Get in Touch</span>
+                                <span>→</span>
+                            </a>
+                            <a href="#experience" class="btn btn-secondary">
+                                <span>View Work</span>
+                            </a>
+                        </div>
+                    </div>
 
-            <div class="cta-group">
-                <a href="#contact" class="cta-button">
-                    <span>Connect with Me</span>
-                </a>
-                <a href="#experience" class="cta-button secondary">
-                    <span>View Experience</span>
-                </a>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">$2M+</span>
+                            <span class="stat-label">Revenue Impact</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">5+</span>
+                            <span class="stat-label">Years Leadership</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">1M+</span>
+                            <span class="stat-label">Transactions</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">10+</span>
+                            <span class="stat-label">ML Systems</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <div class="section-divider">
-            <span class="section-divider-ornament">❦ ❦ ❦</span>
-        </div>
-
-        <section id="experience" class="experience">
-            <div class="section-header">
-                <div class="section-label">Professional Journey</div>
-                <h2 class="section-title">Experience & Impact</h2>
-                <p class="section-description">A chronicle of technical leadership, innovation, and measurable business transformation through machine learning</p>
-            </div>
-
-            <div class="timeline">
-                <article class="experience-card">
-                    <div class="experience-content">
-                        <div class="experience-header">
-                            <h3 class="company-name">Molly Fashion AI</h3>
-                            <p class="role-title">Senior Technical Product Manager, AI</p>
-                            <time class="timeline-date">January 2022 — Present</time>
-                        </div>
-
-                        <div class="impact-summary">
-                            Led end-to-end ML product development | <strong>Increased conversion 34%</strong> | <strong>$2.1M incremental revenue</strong>
-                        </div>
-
-                        <ul class="achievements">
-                            <li><strong>Spearheaded vision AI initiative</strong> from concept to production launch, coordinating 3 engineering teams across 8-month timeline, resulting in automated tagging system that processed 500K products and reduced manual QA costs by $120K annually</li>
-                            
-                            <li><strong>Architected computer vision pipeline</strong> using ResNet-based attribute tagging that automated 85% of manual product categorization, reducing labeling costs by $120K annually across 500K+ SKUs</li>
-                            
-                            <li><strong>Built hybrid recommendation system</strong> (collaborative + content-based filtering) that improved click-through rate by 23% and average order value by 18% for 200K+ monthly active users</li>
-                            
-                            <li><strong>Drove product strategy</strong> for hybrid recommendation engine, conducting competitive analysis, defining success metrics, and managing backlog prioritization—delivered 23% CTR improvement and 18% AOV lift, contributing $2.1M incremental revenue in year one</li>
-                            
-                            <li><strong>Deployed conversational commerce agent</strong> integrating NLP, SQL query generation, and semantic search, handling 40% of customer styling inquiries with 4.2/5 satisfaction score</li>
-                            
-                            <li><strong>Championed MLOps transformation</strong>, establishing CI/CD pipelines, model versioning standards, and monitoring infrastructure that accelerated deployment velocity 5x and reduced production incidents by 40%</li>
-                            
-                            <li><strong>Partnered with executive stakeholders</strong> to build business case for conversational commerce, presenting technical feasibility assessments and ROI projections that secured $800K investment</li>
-                            
-                            <li><strong>Mentored team of 5 ML engineers</strong>, conducting code reviews, defining technical standards, and fostering culture of experimentation that improved model iteration speed by 60%</li>
-                        </ul>
-
-                        <div class="tech-stack">
-                            <span class="tech-tag">Computer Vision</span>
-                            <span class="tech-tag">ResNet Architecture</span>
-                            <span class="tech-tag">Natural Language Processing</span>
-                            <span class="tech-tag">Recommender Systems</span>
-                            <span class="tech-tag">MLOps</span>
-                            <span class="tech-tag">CI/CD Pipelines</span>
-                            <span class="tech-tag">Product Strategy</span>
-                            <span class="tech-tag">Technical Leadership</span>
-                            <span class="tech-tag">Stakeholder Management</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="experience-card">
-                    <div class="experience-content">
-                        <div class="experience-header">
-                            <h3 class="company-name">Tax Form OCR System</h3>
-                            <p class="role-title">ML Product Manager</p>
-                            <time class="timeline-date">March 2021 — December 2021</time>
-                        </div>
-
-                        <div class="impact-summary">
-                            Delivered production-ready OCR system | <strong>94% extraction accuracy</strong> | <strong>Processed 1M+ forms</strong>
-                        </div>
-
-                        <ul class="achievements">
-                            <li><strong>Delivered document AI solution</strong> under aggressive 6-month deadline, managing technical dependencies across data annotation, model training, and integration workstreams—achieved 94% extraction accuracy, exceeding 85% target</li>
-                            
-                            <li><strong>Fine-tuned document AI models</strong> achieving 94% field extraction accuracy (up from 67% baseline) on 15+ tax form types, eliminating 200+ hours/month of manual data entry</li>
-                            
-                            <li><strong>Engineered editable PDF system</strong> with auto-fill validation logic, reducing form completion errors by 61% and improving user task completion rate from 52% to 89%</li>
-                            
-                            <li><strong>Orchestrated human-in-the-loop workflow design</strong>, collaborating with operations team to balance automation with quality control, maintaining 99.2% accuracy SLA while processing 85K forms monthly at 10x cost efficiency vs. manual processing</li>
-                            
-                            <li><strong>Designed error handling workflow</strong> for human-in-the-loop review, maintaining 99.2% accuracy SLA while processing 85K forms monthly during tax season</li>
-                            
-                            <li><strong>Negotiated technical trade-offs</strong> between model complexity and inference latency, conducting cost-benefit analysis that shaped architecture decisions and achieved <2s response time on 95th percentile</li>
-                        </ul>
-
-                        <div class="tech-stack">
-                            <span class="tech-tag">Optical Character Recognition</span>
-                            <span class="tech-tag">Document AI</span>
-                            <span class="tech-tag">Model Fine-tuning</span>
-                            <span class="tech-tag">PDF Processing</span>
-                            <span class="tech-tag">Human-in-the-loop Systems</span>
-                            <span class="tech-tag">Workflow Optimization</span>
-                            <span class="tech-tag">SLA Management</span>
-                            <span class="tech-tag">Technical Trade-offs</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="experience-card">
-                    <div class="experience-content">
-                        <div class="experience-header">
-                            <h3 class="company-name">Intelligent Tourism Platform</h3>
-                            <p class="role-title">Data Science Product Lead</p>
-                            <time class="timeline-date">June 2020 — February 2021</time>
-                        </div>
-
-                        <div class="impact-summary">
-                            Pioneered graph-based recommendation | <strong>2.8x engagement lift</strong> | <strong>45K trips planned</strong>
-                        </div>
-
-                        <ul class="achievements">
-                            <li><strong>Pioneered graph-based recommendation architecture</strong>, defining technical requirements, evaluating Neo4j vs. alternatives, and leading proof-of-concept that demonstrated 180% engagement improvement, securing executive buy-in for full build</li>
-                            
-                            <li><strong>Developed knowledge graph architecture</strong> using Neo4j and GNN embeddings to model 50K+ points of interest with contextual relationships (seasonality, accessibility, user preferences)</li>
-                            
-                            <li><strong>Implemented ontology-driven recommendation engine</strong> that increased itinerary completion rate by 180% and generated 45K personalized multi-day trips in first 6 months</li>
-                            
-                            <li><strong>Managed end-to-end product lifecycle</strong> for AI-powered itinerary planner, from user research through beta launch, coordinating data engineering, ML, and frontend teams—achieved 45K trips planned and 88% user satisfaction in first 6 months</li>
-                            
-                            <li><strong>Built AI agent for dynamic itinerary optimization</strong> using reinforcement learning, adapting real-time to budget constraints, weather, and venue availability with 88% user acceptance</li>
-                            
-                            <li><strong>Established experimentation framework</strong> for personalization algorithms, designing A/B testing infrastructure and metrics dashboards that enabled data-driven iteration and reduced decision-making time by 50%</li>
-                        </ul>
-
-                        <div class="tech-stack">
-                            <span class="tech-tag">Graph Neural Networks</span>
-                            <span class="tech-tag">Neo4j</span>
-                            <span class="tech-tag">Knowledge Graphs</span>
-                            <span class="tech-tag">Ontology Engineering</span>
-                            <span class="tech-tag">Reinforcement Learning</span>
-                            <span class="tech-tag">A/B Testing</span>
-                            <span class="tech-tag">Product Lifecycle Management</span>
-                            <span class="tech-tag">Metrics Dashboards</span>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <div class="section-divider">
-            <span class="section-divider-ornament">❦ ❦ ❦</span>
-        </div>
-
-        <section id="skills" class="skills">
+        <section id="experience" class="section">
             <div class="container">
                 <div class="section-header">
-                    <div class="section-label">Capabilities</div>
-                    <h2 class="section-title">Technical Expertise</h2>
-                    <p class="section-description">Comprehensive mastery spanning leadership, engineering, and strategic product development</p>
+                    <div class="section-meta">
+                        <div class="section-number">[01]</div>
+                        <h2 class="section-title">Experience</h2>
+                        <p class="section-description">Building and scaling ML products that solve real business problems with measurable impact</p>
+                    </div>
+                    <div></div>
+                </div>
+
+                <div class="experience-list">
+                    <article class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="company-title">Molly Fashion AI</h3>
+                                <p class="role-title">Senior Technical Product Manager, AI</p>
+                                <time class="date-range">2022.01 — Present</time>
+                            </div>
+                            <div class="experience-tag">Current</div>
+                        </div>
+
+                        <div class="experience-metrics">
+                            <div class="metric">
+                                <div class="metric-value">34%</div>
+                                <div class="metric-label">Conversion Up</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">$2.1M</div>
+                                <div class="metric-label">Revenue Gen</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">500K+</div>
+                                <div class="metric-label">Products</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">5x</div>
+                                <div class="metric-label">Deploy Speed</div>
+                            </div>
+                        </div>
+
+                        <div class="experience-content">
+                            <ul class="experience-achievements">
+                                <li><strong>Spearheaded vision AI initiative</strong> from concept to production launch, coordinating 3 engineering teams across 8-month timeline, resulting in automated tagging system that processed 500K products and reduced manual QA costs by $120K annually</li>
+                                
+                                <li><strong>Architected computer vision pipeline</strong> using ResNet-based attribute tagging that automated 85% of manual product categorization, reducing labeling costs by $120K annually across 500K+ SKUs</li>
+                                
+                                <li><strong>Built hybrid recommendation system</strong> (collaborative + content-based filtering) that improved click-through rate by 23% and average order value by 18% for 200K+ monthly active users</li>
+                                
+                                <li><strong>Deployed conversational commerce agent</strong> integrating NLP, SQL query generation, and semantic search, handling 40% of customer styling inquiries with 4.2/5 satisfaction score</li>
+                                
+                                <li><strong>Championed MLOps transformation</strong>, establishing CI/CD pipelines, model versioning standards, and monitoring infrastructure that accelerated deployment velocity 5x and reduced production incidents by 40%</li>
+                                
+                                <li><strong>Partnered with executive stakeholders</strong> to build business case for conversational commerce, presenting technical feasibility assessments and ROI projections that secured $800K investment</li>
+                                
+                                <li><strong>Mentored team of 5 ML engineers</strong>, conducting code reviews, defining technical standards, and fostering culture of experimentation that improved model iteration speed by 60%</li>
+                            </ul>
+
+                            <div class="tech-stack">
+                                <div class="tech-tag">Computer Vision</div>
+                                <div class="tech-tag">ResNet</div>
+                                <div class="tech-tag">NLP</div>
+                                <div class="tech-tag">Recommenders</div>
+                                <div class="tech-tag">MLOps</div>
+                                <div class="tech-tag">CI/CD</div>
+                                <div class="tech-tag">Strategy</div>
+                                <div class="tech-tag">Leadership</div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="company-title">Tax Form OCR System</h3>
+                                <p class="role-title">ML Product Manager</p>
+                                <time class="date-range">2021.03 — 2021.12</time>
+                            </div>
+                            <div class="experience-tag">Fintech</div>
+                        </div>
+
+                        <div class="experience-metrics">
+                            <div class="metric">
+                                <div class="metric-value">94%</div>
+                                <div class="metric-label">Accuracy</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">1M+</div>
+                                <div class="metric-label">Forms</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">61%</div>
+                                <div class="metric-label">Error Down</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">99.2%</div>
+                                <div class="metric-label">SLA</div>
+                            </div>
+                        </div>
+
+                        <div class="experience-content">
+                            <ul class="experience-achievements">
+                                <li><strong>Delivered document AI solution</strong> under aggressive 6-month deadline, managing technical dependencies across data annotation, model training, and integration workstreams—achieved 94% extraction accuracy, exceeding 85% target</li>
+                                
+                                <li><strong>Fine-tuned document AI models</strong> achieving 94% field extraction accuracy (up from 67% baseline) on 15+ tax form types, eliminating 200+ hours/month of manual data entry</li>
+                                
+                                <li><strong>Engineered editable PDF system</strong> with auto-fill validation logic, reducing form completion errors by 61% and improving user task completion rate from 52% to 89%</li>
+                                
+                                <li><strong>Orchestrated human-in-the-loop workflow design</strong>, collaborating with operations team to balance automation with quality control, maintaining 99.2% accuracy SLA while processing 85K forms monthly at 10x cost efficiency vs. manual processing</li>
+                                
+                                <li><strong>Negotiated technical trade-offs</strong> between model complexity and inference latency, conducting cost-benefit analysis that shaped architecture decisions and achieved <2s response time on 95th percentile</li>
+                            </ul>
+
+                            <div class="tech-stack">
+                                <div class="tech-tag">OCR</div>
+                                <div class="tech-tag">Document AI</div>
+                                <div class="tech-tag">Fine-tuning</div>
+                                <div class="tech-tag">PDF Process</div>
+                                <div class="tech-tag">HITL</div>
+                                <div class="tech-tag">Workflow</div>
+                                <div class="tech-tag">SLA Mgmt</div>
+                                <div class="tech-tag">Trade-offs</div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="company-title">Intelligent Tourism Platform</h3>
+                                <p class="role-title">Data Science Product Lead</p>
+                                <time class="date-range">2020.06 — 2021.02</time>
+                            </div>
+                            <div class="experience-tag">Travel</div>
+                        </div>
+
+                        <div class="experience-metrics">
+                            <div class="metric">
+                                <div class="metric-value">180%</div>
+                                <div class="metric-label">Engagement</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">45K</div>
+                                <div class="metric-label">Trips</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">88%</div>
+                                <div class="metric-label">Satisfaction</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">50K+</div>
+                                <div class="metric-label">POIs</div>
+                            </div>
+                        </div>
+
+                        <div class="experience-content">
+                            <ul class="experience-achievements">
+                                <li><strong>Pioneered graph-based recommendation architecture</strong>, defining technical requirements, evaluating Neo4j vs. alternatives, and leading proof-of-concept that demonstrated 180% engagement improvement, securing executive buy-in for full build</li>
+                                
+                                <li><strong>Developed knowledge graph architecture</strong> using Neo4j and GNN embeddings to model 50K+ points of interest with contextual relationships (seasonality, accessibility, user preferences)</li>
+                                
+                                <li><strong>Implemented ontology-driven recommendation engine</strong> that increased itinerary completion rate by 180% and generated 45K personalized multi-day trips in first 6 months</li>
+                                
+                                <li><strong>Managed end-to-end product lifecycle</strong> for AI-powered itinerary planner, from user research through beta launch, coordinating data engineering, ML, and frontend teams—achieved 45K trips planned and 88% user satisfaction in first 6 months</li>
+                                
+                                <li><strong>Built AI agent for dynamic itinerary optimization</strong> using reinforcement learning, adapting real-time to budget constraints, weather, and venue availability with 88% user acceptance</li>
+                                
+                                <li><strong>Established experimentation framework</strong> for personalization algorithms, designing A/B testing infrastructure and metrics dashboards that enabled data-driven iteration and reduced decision-making time by 50%</li>
+                            </ul>
+
+                            <div class="tech-stack">
+                                <div class="tech-tag">GNN</div>
+                                <div class="tech-tag">Neo4j</div>
+                                <div class="tech-tag">Knowledge Graph</div>
+                                <div class="tech-tag">Ontology</div>
+                                <div class="tech-tag">RL</div>
+                                <div class="tech-tag">A/B Testing</div>
+                                <div class="tech-tag">Lifecycle</div>
+                                <div class="tech-tag">Metrics</div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-meta">
+                        <div class="section-number">[02]</div>
+                        <h2 class="section-title">Skills</h2>
+                        <p class="section-description">Comprehensive technical and leadership capabilities across the ML product lifecycle</p>
+                    </div>
+                    <div></div>
                 </div>
 
                 <div class="skills-grid">
                     <div class="skill-card">
-                        <span class="skill-icon">🧠</span>
+                        <div class="skill-icon">🧠</div>
                         <h3 class="skill-title">Machine Learning</h3>
-                        <p class="skill-description">Computer Vision, Natural Language Processing, Recommender Systems, Graph Neural Networks, Deep Learning Architectures</p>
+                        <p class="skill-description">Deep expertise in building and deploying production ML systems</p>
+                        <div class="skill-list">
+                            <div class="skill-list-item">Computer Vision</div>
+                            <div class="skill-list-item">NLP</div>
+                            <div class="skill-list-item">Recommender Systems</div>
+                            <div class="skill-list-item">Graph Neural Networks</div>
+                            <div class="skill-list-item">Deep Learning</div>
+                        </div>
                     </div>
 
                     <div class="skill-card">
-                        <span class="skill-icon">⚙️</span>
-                        <h3 class="skill-title">MLOps & Infrastructure</h3>
-                        <p class="skill-description">CI/CD Pipelines, Model Deployment, Monitoring Systems, Docker, Kubernetes, Version Control, Production ML</p>
+                        <div class="skill-icon">⚙️</div>
+                        <h3 class="skill-title">MLOps</h3>
+                        <p class="skill-description">End-to-end pipeline development and production deployment</p>
+                        <div class="skill-list">
+                            <div class="skill-list-item">CI/CD Pipelines</div>
+                            <div class="skill-list-item">Docker / Kubernetes</div>
+                            <div class="skill-list-item">Model Monitoring</div>
+                            <div class="skill-list-item">Version Control</div>
+                            <div class="skill-list-item">AWS / GCP</div>
+                        </div>
                     </div>
 
                     <div class="skill-card">
-                        <span class="skill-icon">👥</span>
-                        <h3 class="skill-title">Technical Leadership</h3>
-                        <p class="skill-description">Team Management, Cross-functional Collaboration, Stakeholder Communication, Executive Presentations, Mentorship</p>
+                        <div class="skill-icon">👥</div>
+                        <h3 class="skill-title">Leadership</h3>
+                        <p class="skill-description">Building and scaling high-performing engineering teams</p>
+                        <div class="skill-list">
+                            <div class="skill-list-item">Team Management</div>
+                            <div class="skill-list-item">Mentorship</div>
+                            <div class="skill-list-item">Cross-functional</div>
+                            <div class="skill-list-item">Stakeholder Mgmt</div>
+                            <div class="skill-list-item">Executive Comms</div>
+                        </div>
                     </div>
 
                     <div class="skill-card">
-                        <span class="skill-icon">📊</span>
+                        <div class="skill-icon">📊</div>
                         <h3 class="skill-title">Product Strategy</h3>
-                        <p class="skill-description">Roadmap Development, A/B Testing Frameworks, Metrics Definition, ROI Analysis, Competitive Analysis, Prioritization</p>
+                        <p class="skill-description">Data-driven product development and roadmap planning</p>
+                        <div class="skill-list">
+                            <div class="skill-list-item">Roadmapping</div>
+                            <div class="skill-list-item">A/B Testing</div>
+                            <div class="skill-list-item">Metrics Definition</div>
+                            <div class="skill-list-item">ROI Analysis</div>
+                            <div class="skill-list-item">Prioritization</div>
+                        </div>
                     </div>
 
                     <div class="skill-card">
-                        <span class="skill-icon">🗄️</span>
+                        <div class="skill-icon">🗄️</div>
                         <h3 class="skill-title">Data Engineering</h3>
-                        <p class="skill-description">SQL, Neo4j, MongoDB, PostgreSQL, Data Pipelines, ETL Processes, Big Data Technologies, Apache Spark</p>
+                        <p class="skill-description">Scalable data pipelines and infrastructure</p>
+                        <div class="skill-list">
+                            <div class="skill-list-item">SQL / NoSQL</div>
+                            <div class="skill-list-item">Neo4j</div>
+                            <div class="skill-list-item">Apache Spark</div>
+                            <div class="skill-list-item">ETL Pipelines</div>
+                            <div class="skill-list-item">Data Modeling</div>
+                        </div>
                     </div>
 
                     <div class="skill-card">
-                        <span class="skill-icon">🛠️</span>
-                        <h3 class="skill-title">Frameworks & Tools</h3>
-                        <p class="skill-description">TensorFlow, PyTorch, Scikit-learn, Pandas, NumPy, AWS SageMaker, GCP AI Platform, Azure ML</p>
+                        <div class="skill-icon">🛠️</div>
+                        <h3 class="skill-title">Tools & Frameworks</h3>
+                        <p class="skill-description">Modern ML and development tooling</p>
+                        <div class="skill-list">
+                            <div class="skill-list-item">TensorFlow</div>
+                            <div class="skill-list-item">PyTorch</div>
+                            <div class="skill-list-item">Scikit-learn</div>
+                            <div class="skill-list-item">Python</div>
+                            <div class="skill-list-item">Git</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+    </main>
 
-        <div class="section-divider">
-            <span class="section-divider-ornament">❦ ❦ ❦</span>
-        </div>
-
-        <footer id="contact">
-            <div class="footer-content">
-                <h2 class="footer-title">Let's Connect</h2>
-                <p class="footer-subtitle">Open to discussing opportunities in technical leadership and AI product development</p>
-                
-                <div class="social-links">
-                    <a href="#" class="social-link" aria-label="Email" title="Email">
-                        📧
-                    </a>
-                    <a href="#" class="social-link" aria-label="LinkedIn" title="LinkedIn">
-                        💼
-                    </a>
-                    <a href="#" class="social-link" aria-label="GitHub" title="GitHub">
-                        ⚡
-                    </a>
-                    <a href="#" class="social-link" aria-label="Portfolio" title="Portfolio">
-                        📄
-                    </a>
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <h2>Let's Connect</h2>
+                    <p>Open to discussing technical leadership opportunities and AI product development</p>
+                    <p class="copyright">© 2026 — Built with precision</p>
                 </div>
 
-                <p class="copyright">&copy; 2026 Technical Data Science Portfolio — Crafted with Scholarly Precision</p>
+                <div class="footer-contact">
+                    <a href="#" class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-label">Email</div>
+                    </a>
+                    <a href="#" class="contact-item">
+                        <div class="contact-icon">💼</div>
+                        <div class="contact-label">LinkedIn</div>
+                    </a>
+                    <a href="#" class="contact-item">
+                        <div class="contact-icon">⚡</div>
+                        <div class="contact-label">GitHub</div>
+                    </a>
+                    <a href="#" class="contact-item">
+                        <div class="contact-icon">📄</div>
+                        <div class="contact-label">Resume</div>
+                    </a>
+                </div>
             </div>
-        </footer>
-    </div>
+        </div>
+    </footer>
 </body>
 </html>
