@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio — Creative Developer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <title>Portfolio of Excellence — Technical Data Science Manager</title>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Libre+Baskerville:wght@400;700&family=Quattrocento:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #0a0a0a;
-            --text: #e8e8e8;
-            --accent: #ff6b35;
-            --secondary: #f7931e;
-            --muted: #666;
+            --aged-paper: #f8f6f0;
+            --deep-ink: #1c1410;
+            --charcoal: #2a2520;
+            --wine: #6b2d2d;
+            --antique-gold: #b8935e;
+            --forest: #3d4f3a;
+            --slate: #545454;
+            --sepia: #e6dfd0;
+            --cream: #faf8f3;
         }
 
         * {
@@ -20,15 +24,21 @@
             box-sizing: border-box;
         }
 
-        body {
-            background: var(--bg);
-            color: var(--text);
-            font-family: 'DM Sans', sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
+        html {
+            scroll-behavior: smooth;
         }
 
-        /* Animated gradient background */
+        body {
+            background: var(--aged-paper);
+            color: var(--deep-ink);
+            font-family: 'EB Garamond', serif;
+            font-size: 18px;
+            line-height: 1.75;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Sophisticated paper texture */
         body::before {
             content: '';
             position: fixed;
@@ -36,36 +46,66 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 20% 50%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 80%, rgba(247, 147, 30, 0.08) 0%, transparent 50%);
-            animation: bgShift 15s ease-in-out infinite;
+            background: 
+                url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
             pointer-events: none;
-            z-index: 0;
+            z-index: 1;
+            opacity: 0.4;
         }
 
-        @keyframes bgShift {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.8; transform: scale(1.1); }
+        /* Subtle vignette */
+        body::after {
+            content: '';
+            position: fixed;
+            top: -10%;
+            left: -10%;
+            width: 120%;
+            height: 120%;
+            background: radial-gradient(
+                ellipse at center,
+                transparent 40%,
+                rgba(28, 20, 16, 0.12) 100%
+            );
+            pointer-events: none;
+            z-index: 1;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 4rem;
             position: relative;
-            z-index: 1;
+            z-index: 2;
         }
 
-        /* Header */
+        /* Elegant header with serif emphasis */
         header {
-            padding: 3rem 0 2rem;
-            animation: fadeInDown 1s ease;
+            padding: 3rem 0;
+            animation: fadeInDown 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 1px;
+            background: linear-gradient(
+                to right,
+                transparent,
+                var(--antique-gold) 20%,
+                var(--antique-gold) 80%,
+                transparent
+            );
         }
 
         @keyframes fadeInDown {
             from {
                 opacity: 0;
-                transform: translateY(-30px);
+                transform: translateY(-40px);
             }
             to {
                 opacity: 1;
@@ -77,58 +117,81 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 900;
-            color: var(--accent);
+            font-family: 'Libre Baskerville', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--wine);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--antique-gold);
         }
 
         nav ul {
             display: flex;
-            gap: 2rem;
+            gap: 3rem;
             list-style: none;
         }
 
         nav a {
-            color: var(--text);
+            color: var(--charcoal);
             text-decoration: none;
-            font-weight: 500;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
             position: relative;
-            transition: color 0.3s;
+            transition: color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        nav a::after {
+        nav a::before {
             content: '';
             position: absolute;
-            bottom: -4px;
-            left: 0;
+            bottom: -6px;
+            left: 50%;
+            transform: translateX(-50%);
             width: 0;
-            height: 2px;
-            background: var(--accent);
-            transition: width 0.3s;
+            height: 1px;
+            background: var(--wine);
+            transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         nav a:hover {
-            color: var(--accent);
+            color: var(--wine);
         }
 
-        nav a:hover::after {
+        nav a:hover::before {
             width: 100%;
         }
 
-        /* Hero */
+        /* Hero section with literary emphasis */
         .hero {
-            padding: 8rem 0 6rem;
-            animation: fadeIn 1.2s ease 0.3s both;
+            padding: 6rem 0 5rem;
+            max-width: 900px;
+            margin: 0 auto;
+            animation: fadeIn 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+            text-align: center;
         }
 
         @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
@@ -136,55 +199,122 @@
             }
         }
 
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 8vw, 6rem);
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .hero-ornament {
+            width: 80px;
+            height: 1px;
+            background: var(--antique-gold);
+            margin: 0 auto 2rem;
+            position: relative;
         }
 
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--muted);
-            max-width: 600px;
-            margin-bottom: 2rem;
+        .hero-ornament::before,
+        .hero-ornament::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 6px;
+            height: 6px;
+            background: var(--antique-gold);
+            border-radius: 50%;
+            transform: translateY(-50%);
+        }
+
+        .hero-ornament::before {
+            left: -12px;
+        }
+
+        .hero-ornament::after {
+            right: -12px;
+        }
+
+        .hero h1 {
+            font-family: 'Libre Baskerville', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1.5rem;
+            color: var(--deep-ink);
+            letter-spacing: -0.5px;
+        }
+
+        .hero .title-accent {
+            display: block;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            color: var(--wine);
+            font-style: italic;
+            font-weight: 400;
+            margin-top: 0.5rem;
+        }
+
+        .hero .subtitle {
+            font-size: 1.15rem;
+            color: var(--forest);
+            font-style: italic;
+            margin-bottom: 2.5rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-summary {
+            font-size: 1.1rem;
+            color: var(--charcoal);
+            line-height: 1.9;
+            margin-bottom: 3rem;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+            padding: 2rem 2.5rem;
+            background: var(--sepia);
+            border-left: 3px solid var(--wine);
+            box-shadow: 0 2px 20px rgba(28, 20, 16, 0.08);
+        }
+
+        .hero-summary strong {
+            color: var(--wine);
+            font-weight: 600;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 3rem;
         }
 
         .cta-button {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
             padding: 1rem 2.5rem;
-            background: var(--accent);
-            color: var(--bg);
+            background: var(--wine);
+            color: var(--cream);
             text-decoration: none;
-            border-radius: 50px;
-            font-weight: 500;
-            transition: all 0.3s;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
+            border: 2px solid var(--wine);
             overflow: hidden;
         }
 
         .cta-button::before {
             content: '';
             position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: var(--secondary);
-            transition: width 0.6s, height 0.6s, top 0.6s, left 0.6s;
-            transform: translate(-50%, -50%);
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--deep-ink);
+            transition: left 0.5s cubic-bezier(0.16, 1, 0.3, 1);
             z-index: 0;
         }
 
         .cta-button:hover::before {
-            width: 300px;
-            height: 300px;
+            left: 0;
         }
 
         .cta-button span {
@@ -192,168 +322,558 @@
             z-index: 1;
         }
 
-        /* Projects Grid */
-        .projects {
-            padding: 6rem 0;
-            animation: fadeIn 1.4s ease 0.6s both;
+        .cta-button:hover {
+            border-color: var(--deep-ink);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(28, 20, 16, 0.25);
         }
 
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            font-weight: 900;
-            margin-bottom: 3rem;
+        .cta-button.secondary {
+            background: transparent;
+            color: var(--wine);
+            border: 2px solid var(--wine);
+        }
+
+        .cta-button.secondary::before {
+            background: var(--wine);
+        }
+
+        .cta-button.secondary:hover {
+            color: var(--cream);
+            border-color: var(--wine);
+        }
+
+        /* Section divider */
+        .section-divider {
             text-align: center;
+            margin: 5rem 0;
+            position: relative;
         }
 
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
+        .section-divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(
+                to right,
+                transparent,
+                var(--antique-gold) 40%,
+                var(--antique-gold) 60%,
+                transparent
+            );
+            transform: translateY(-50%);
         }
 
-        .project-card {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 16px;
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+        .section-divider-ornament {
+            display: inline-block;
+            background: var(--aged-paper);
+            padding: 0 2rem;
+            color: var(--antique-gold);
+            font-size: 1.2rem;
+            letter-spacing: 1rem;
+            position: relative;
+            z-index: 1;
         }
 
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(255, 107, 53, 0.2);
+        /* Experience Section */
+        .experience {
+            padding: 3rem 0 5rem;
+            animation: fadeIn 1.6s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
         }
 
-        .project-image {
-            width: 100%;
-            height: 250px;
-            background: linear-gradient(135deg, var(--accent), var(--secondary));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            opacity: 0.3;
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
         }
 
-        .project-content {
-            padding: 2rem;
-        }
-
-        .project-content h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--accent);
-        }
-
-        .project-content p {
-            color: var(--muted);
+        .section-label {
+            font-family: 'Lato', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--antique-gold);
             margin-bottom: 1rem;
         }
 
-        .project-tags {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
+        .section-title {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--deep-ink);
+            letter-spacing: -0.5px;
+            margin-bottom: 1rem;
         }
 
-        .tag {
-            padding: 0.25rem 0.75rem;
-            background: rgba(255, 107, 53, 0.1);
-            color: var(--accent);
-            border-radius: 20px;
+        .section-description {
+            font-size: 1.1rem;
+            color: var(--slate);
+            font-style: italic;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Vertical timeline line */
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 40px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(
+                to bottom,
+                var(--antique-gold),
+                var(--sepia)
+            );
+        }
+
+        .experience-card {
+            position: relative;
+            margin-bottom: 4rem;
+            padding-left: 100px;
+            animation: slideInRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+
+        .experience-card:nth-child(1) { animation-delay: 0.1s; }
+        .experience-card:nth-child(2) { animation-delay: 0.3s; }
+        .experience-card:nth-child(3) { animation-delay: 0.5s; }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Timeline dot */
+        .experience-card::before {
+            content: '';
+            position: absolute;
+            left: 32px;
+            top: 8px;
+            width: 18px;
+            height: 18px;
+            background: var(--wine);
+            border: 3px solid var(--aged-paper);
+            border-radius: 50%;
+            box-shadow: 0 0 0 3px var(--antique-gold);
+            z-index: 2;
+        }
+
+        .experience-content {
+            background: var(--cream);
+            padding: 2.5rem;
+            border: 1px solid rgba(184, 147, 94, 0.2);
+            box-shadow: 
+                0 2px 10px rgba(28, 20, 16, 0.06),
+                0 8px 30px rgba(28, 20, 16, 0.08);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        .experience-content::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            right: 15px;
+            bottom: 15px;
+            border: 1px solid rgba(184, 147, 94, 0.15);
+            pointer-events: none;
+        }
+
+        .experience-card:hover .experience-content {
+            transform: translateX(5px);
+            box-shadow: 
+                0 4px 20px rgba(28, 20, 16, 0.1),
+                0 12px 40px rgba(107, 45, 45, 0.15);
+            border-color: var(--wine);
+        }
+
+        .experience-header {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid var(--sepia);
+            position: relative;
+        }
+
+        .experience-header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 80px;
+            height: 2px;
+            background: var(--wine);
+        }
+
+        .company-name {
+            font-family: 'Quattrocento', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--wine);
+            margin-bottom: 0.4rem;
+            letter-spacing: -0.3px;
+        }
+
+        .role-title {
+            font-family: 'Lato', sans-serif;
+            font-size: 1rem;
+            color: var(--forest);
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-date {
+            font-family: 'Lato', sans-serif;
             font-size: 0.85rem;
+            color: var(--slate);
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .impact-summary {
+            background: rgba(107, 45, 45, 0.06);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--wine);
+            font-style: italic;
+            color: var(--charcoal);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .impact-summary strong {
+            color: var(--wine);
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        .achievements {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .achievements li {
+            padding-left: 2.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            color: var(--charcoal);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .achievements li::before {
+            content: '◆';
+            position: absolute;
+            left: 0.5rem;
+            color: var(--antique-gold);
+            font-size: 0.9rem;
+            top: 0.1rem;
+        }
+
+        .achievements strong {
+            color: var(--wine);
+            font-weight: 600;
+        }
+
+        .tech-stack {
+            display: flex;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(184, 147, 94, 0.2);
+        }
+
+        .tech-tag {
+            padding: 0.4rem 1rem;
+            background: var(--aged-paper);
+            color: var(--charcoal);
+            border: 1px solid var(--antique-gold);
+            font-family: 'Lato', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .tech-tag:hover {
+            background: var(--wine);
+            color: var(--cream);
+            border-color: var(--wine);
+            transform: translateY(-2px);
         }
 
         /* Skills Section */
         .skills {
-            padding: 6rem 0;
-            animation: fadeIn 1.6s ease 0.9s both;
+            padding: 5rem 0;
+            background: var(--sepia);
+            margin: 5rem -4rem 0;
+            animation: fadeIn 1.8s cubic-bezier(0.16, 1, 0.3, 1) 0.9s both;
         }
 
-        .skills-list {
+        .skills .container {
+            padding: 0 4rem;
+        }
+
+        .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
+            margin-top: 4rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .skill-item {
-            text-align: center;
+        .skill-card {
+            background: var(--cream);
             padding: 2rem;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 12px;
-            transition: all 0.3s;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(184, 147, 94, 0.2);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
         }
 
-        .skill-item:hover {
-            background: rgba(255, 107, 53, 0.05);
-            border-color: var(--accent);
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 1px solid rgba(184, 147, 94, 0.15);
+            pointer-events: none;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(28, 20, 16, 0.15);
+            border-color: var(--wine);
+        }
+
+        .skill-card:hover::before {
+            border-color: var(--wine);
         }
 
         .skill-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
         }
 
-        .skill-item h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
+        .skill-title {
+            font-family: 'Quattrocento', serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--wine);
+            font-weight: 700;
         }
 
-        .skill-item p {
-            color: var(--muted);
-            font-size: 0.9rem;
+        .skill-description {
+            color: var(--slate);
+            font-size: 0.95rem;
+            line-height: 1.7;
         }
 
         /* Footer */
         footer {
-            padding: 4rem 0 2rem;
+            padding: 5rem 0 3rem;
             text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            animation: fadeIn 1.8s ease 1.2s both;
+            animation: fadeIn 2s cubic-bezier(0.16, 1, 0.3, 1) 1.2s both;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 1px;
+            background: linear-gradient(
+                to right,
+                transparent,
+                var(--antique-gold) 20%,
+                var(--antique-gold) 80%,
+                transparent
+            );
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-title {
+            font-family: 'Quattrocento', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--wine);
+            margin-bottom: 1rem;
+        }
+
+        .footer-subtitle {
+            font-size: 1.05rem;
+            color: var(--slate);
+            margin-bottom: 2.5rem;
+            font-style: italic;
         }
 
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
         }
 
-        .social-links a {
-            color: var(--text);
-            font-size: 1.5rem;
-            transition: all 0.3s;
+        .social-link {
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--cream);
+            color: var(--charcoal);
+            text-decoration: none;
+            font-size: 1.4rem;
+            border: 1px solid var(--antique-gold);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
         }
 
-        .social-links a:hover {
-            color: var(--accent);
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            right: 5px;
+            bottom: 5px;
+            border: 1px solid rgba(184, 147, 94, 0.15);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .social-link:hover {
+            background: var(--wine);
+            color: var(--cream);
+            border-color: var(--wine);
             transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(107, 45, 45, 0.25);
         }
 
-        footer p {
-            color: var(--muted);
+        .social-link:hover::before {
+            border-color: var(--cream);
         }
 
-        /* Responsive */
+        .copyright {
+            font-family: 'Lato', sans-serif;
+            font-size: 0.85rem;
+            color: var(--slate);
+            letter-spacing: 1px;
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
+            .container {
+                padding: 0 2rem;
+            }
+
+            .skills {
+                margin: 5rem -2rem 0;
+            }
+
+            .skills .container {
+                padding: 0 2rem;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
             nav ul {
-                gap: 1rem;
+                gap: 1.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
             }
 
             .hero {
                 padding: 4rem 0 3rem;
             }
 
-            .projects-grid {
-                grid-template-columns: 1fr;
+            .hero h1 {
+                font-size: 2rem;
             }
 
-            .skills-list {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            .hero .title-accent {
+                font-size: 1.5rem;
+            }
+
+            .hero-summary {
+                padding: 1.5rem;
+            }
+
+            .cta-group {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .experience-card {
+                padding-left: 60px;
+            }
+
+            .experience-card::before {
+                left: 12px;
+            }
+
+            .experience-content {
+                padding: 1.5rem;
+            }
+
+            .company-name {
+                font-size: 1.5rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            body::before,
+            body::after {
+                display: none;
+            }
+
+            .experience-card {
+                page-break-inside: avoid;
+            }
+
+            .cta-group,
+            .social-links {
+                display: none;
             }
         }
     </style>
@@ -364,97 +884,249 @@
             <nav>
                 <div class="logo">Portfolio</div>
                 <ul>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Expertise</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </header>
 
         <section class="hero">
-            <h1>Crafting Digital<br>Experiences</h1>
-            <p>Creative developer specializing in building exceptional web applications with a focus on clean design and seamless user experiences.</p>
-            <a href="#contact" class="cta-button"><span>Get In Touch</span></a>
-        </section>
+            <div class="hero-ornament"></div>
+            <h1>
+                Technical Data Science Manager
+                <span class="title-accent">Architecting Intelligence at Scale</span>
+            </h1>
+            <p class="subtitle">Transforming Complex Algorithms into Revenue-Generating Products</p>
+            
+            <div class="hero-summary">
+                Data Science leader who scales AI products from <strong>0→1</strong>, driving measurable business outcomes. Transformed ML concepts into production systems generating <strong>$2M+ revenue lift</strong> across e-commerce and fintech. Expert in building high-performing teams and translating complex algorithms into executive-ready roadmaps.
+            </div>
 
-        <section id="projects" class="projects">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">🚀</div>
-                    <div class="project-content">
-                        <h3>E-Commerce Platform</h3>
-                        <p>A modern e-commerce solution with seamless checkout and inventory management.</p>
-                        <div class="project-tags">
-                            <span class="tag">React</span>
-                            <span class="tag">Node.js</span>
-                            <span class="tag">MongoDB</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">📱</div>
-                    <div class="project-content">
-                        <h3>Mobile Dashboard</h3>
-                        <p>Real-time analytics dashboard with interactive charts and data visualization.</p>
-                        <div class="project-tags">
-                            <span class="tag">Vue.js</span>
-                            <span class="tag">D3.js</span>
-                            <span class="tag">Firebase</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">🎨</div>
-                    <div class="project-content">
-                        <h3>Design System</h3>
-                        <p>Comprehensive component library with accessibility-first approach.</p>
-                        <div class="project-tags">
-                            <span class="tag">React</span>
-                            <span class="tag">TypeScript</span>
-                            <span class="tag">Storybook</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="cta-group">
+                <a href="#contact" class="cta-button">
+                    <span>Connect with Me</span>
+                </a>
+                <a href="#experience" class="cta-button secondary">
+                    <span>View Experience</span>
+                </a>
             </div>
         </section>
+
+        <div class="section-divider">
+            <span class="section-divider-ornament">❦ ❦ ❦</span>
+        </div>
+
+        <section id="experience" class="experience">
+            <div class="section-header">
+                <div class="section-label">Professional Journey</div>
+                <h2 class="section-title">Experience & Impact</h2>
+                <p class="section-description">A chronicle of technical leadership, innovation, and measurable business transformation through machine learning</p>
+            </div>
+
+            <div class="timeline">
+                <article class="experience-card">
+                    <div class="experience-content">
+                        <div class="experience-header">
+                            <h3 class="company-name">Molly Fashion AI</h3>
+                            <p class="role-title">Senior Technical Product Manager, AI</p>
+                            <time class="timeline-date">January 2022 — Present</time>
+                        </div>
+
+                        <div class="impact-summary">
+                            Led end-to-end ML product development | <strong>Increased conversion 34%</strong> | <strong>$2.1M incremental revenue</strong>
+                        </div>
+
+                        <ul class="achievements">
+                            <li><strong>Spearheaded vision AI initiative</strong> from concept to production launch, coordinating 3 engineering teams across 8-month timeline, resulting in automated tagging system that processed 500K products and reduced manual QA costs by $120K annually</li>
+                            
+                            <li><strong>Architected computer vision pipeline</strong> using ResNet-based attribute tagging that automated 85% of manual product categorization, reducing labeling costs by $120K annually across 500K+ SKUs</li>
+                            
+                            <li><strong>Built hybrid recommendation system</strong> (collaborative + content-based filtering) that improved click-through rate by 23% and average order value by 18% for 200K+ monthly active users</li>
+                            
+                            <li><strong>Drove product strategy</strong> for hybrid recommendation engine, conducting competitive analysis, defining success metrics, and managing backlog prioritization—delivered 23% CTR improvement and 18% AOV lift, contributing $2.1M incremental revenue in year one</li>
+                            
+                            <li><strong>Deployed conversational commerce agent</strong> integrating NLP, SQL query generation, and semantic search, handling 40% of customer styling inquiries with 4.2/5 satisfaction score</li>
+                            
+                            <li><strong>Championed MLOps transformation</strong>, establishing CI/CD pipelines, model versioning standards, and monitoring infrastructure that accelerated deployment velocity 5x and reduced production incidents by 40%</li>
+                            
+                            <li><strong>Partnered with executive stakeholders</strong> to build business case for conversational commerce, presenting technical feasibility assessments and ROI projections that secured $800K investment</li>
+                            
+                            <li><strong>Mentored team of 5 ML engineers</strong>, conducting code reviews, defining technical standards, and fostering culture of experimentation that improved model iteration speed by 60%</li>
+                        </ul>
+
+                        <div class="tech-stack">
+                            <span class="tech-tag">Computer Vision</span>
+                            <span class="tech-tag">ResNet Architecture</span>
+                            <span class="tech-tag">Natural Language Processing</span>
+                            <span class="tech-tag">Recommender Systems</span>
+                            <span class="tech-tag">MLOps</span>
+                            <span class="tech-tag">CI/CD Pipelines</span>
+                            <span class="tech-tag">Product Strategy</span>
+                            <span class="tech-tag">Technical Leadership</span>
+                            <span class="tech-tag">Stakeholder Management</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="experience-card">
+                    <div class="experience-content">
+                        <div class="experience-header">
+                            <h3 class="company-name">Tax Form OCR System</h3>
+                            <p class="role-title">ML Product Manager</p>
+                            <time class="timeline-date">March 2021 — December 2021</time>
+                        </div>
+
+                        <div class="impact-summary">
+                            Delivered production-ready OCR system | <strong>94% extraction accuracy</strong> | <strong>Processed 1M+ forms</strong>
+                        </div>
+
+                        <ul class="achievements">
+                            <li><strong>Delivered document AI solution</strong> under aggressive 6-month deadline, managing technical dependencies across data annotation, model training, and integration workstreams—achieved 94% extraction accuracy, exceeding 85% target</li>
+                            
+                            <li><strong>Fine-tuned document AI models</strong> achieving 94% field extraction accuracy (up from 67% baseline) on 15+ tax form types, eliminating 200+ hours/month of manual data entry</li>
+                            
+                            <li><strong>Engineered editable PDF system</strong> with auto-fill validation logic, reducing form completion errors by 61% and improving user task completion rate from 52% to 89%</li>
+                            
+                            <li><strong>Orchestrated human-in-the-loop workflow design</strong>, collaborating with operations team to balance automation with quality control, maintaining 99.2% accuracy SLA while processing 85K forms monthly at 10x cost efficiency vs. manual processing</li>
+                            
+                            <li><strong>Designed error handling workflow</strong> for human-in-the-loop review, maintaining 99.2% accuracy SLA while processing 85K forms monthly during tax season</li>
+                            
+                            <li><strong>Negotiated technical trade-offs</strong> between model complexity and inference latency, conducting cost-benefit analysis that shaped architecture decisions and achieved <2s response time on 95th percentile</li>
+                        </ul>
+
+                        <div class="tech-stack">
+                            <span class="tech-tag">Optical Character Recognition</span>
+                            <span class="tech-tag">Document AI</span>
+                            <span class="tech-tag">Model Fine-tuning</span>
+                            <span class="tech-tag">PDF Processing</span>
+                            <span class="tech-tag">Human-in-the-loop Systems</span>
+                            <span class="tech-tag">Workflow Optimization</span>
+                            <span class="tech-tag">SLA Management</span>
+                            <span class="tech-tag">Technical Trade-offs</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="experience-card">
+                    <div class="experience-content">
+                        <div class="experience-header">
+                            <h3 class="company-name">Intelligent Tourism Platform</h3>
+                            <p class="role-title">Data Science Product Lead</p>
+                            <time class="timeline-date">June 2020 — February 2021</time>
+                        </div>
+
+                        <div class="impact-summary">
+                            Pioneered graph-based recommendation | <strong>2.8x engagement lift</strong> | <strong>45K trips planned</strong>
+                        </div>
+
+                        <ul class="achievements">
+                            <li><strong>Pioneered graph-based recommendation architecture</strong>, defining technical requirements, evaluating Neo4j vs. alternatives, and leading proof-of-concept that demonstrated 180% engagement improvement, securing executive buy-in for full build</li>
+                            
+                            <li><strong>Developed knowledge graph architecture</strong> using Neo4j and GNN embeddings to model 50K+ points of interest with contextual relationships (seasonality, accessibility, user preferences)</li>
+                            
+                            <li><strong>Implemented ontology-driven recommendation engine</strong> that increased itinerary completion rate by 180% and generated 45K personalized multi-day trips in first 6 months</li>
+                            
+                            <li><strong>Managed end-to-end product lifecycle</strong> for AI-powered itinerary planner, from user research through beta launch, coordinating data engineering, ML, and frontend teams—achieved 45K trips planned and 88% user satisfaction in first 6 months</li>
+                            
+                            <li><strong>Built AI agent for dynamic itinerary optimization</strong> using reinforcement learning, adapting real-time to budget constraints, weather, and venue availability with 88% user acceptance</li>
+                            
+                            <li><strong>Established experimentation framework</strong> for personalization algorithms, designing A/B testing infrastructure and metrics dashboards that enabled data-driven iteration and reduced decision-making time by 50%</li>
+                        </ul>
+
+                        <div class="tech-stack">
+                            <span class="tech-tag">Graph Neural Networks</span>
+                            <span class="tech-tag">Neo4j</span>
+                            <span class="tech-tag">Knowledge Graphs</span>
+                            <span class="tech-tag">Ontology Engineering</span>
+                            <span class="tech-tag">Reinforcement Learning</span>
+                            <span class="tech-tag">A/B Testing</span>
+                            <span class="tech-tag">Product Lifecycle Management</span>
+                            <span class="tech-tag">Metrics Dashboards</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <div class="section-divider">
+            <span class="section-divider-ornament">❦ ❦ ❦</span>
+        </div>
 
         <section id="skills" class="skills">
-            <h2 class="section-title">Skills & Expertise</h2>
-            <div class="skills-list">
-                <div class="skill-item">
-                    <div class="skill-icon">⚡</div>
-                    <h3>Frontend Development</h3>
-                    <p>React, Vue, Next.js</p>
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-label">Capabilities</div>
+                    <h2 class="section-title">Technical Expertise</h2>
+                    <p class="section-description">Comprehensive mastery spanning leadership, engineering, and strategic product development</p>
                 </div>
-                <div class="skill-item">
-                    <div class="skill-icon">🔧</div>
-                    <h3>Backend Development</h3>
-                    <p>Node.js, Express, APIs</p>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-icon">🎨</div>
-                    <h3>UI/UX Design</h3>
-                    <p>Figma, Adobe XD</p>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-icon">📊</div>
-                    <h3>Data Visualization</h3>
-                    <p>D3.js, Chart.js</p>
+
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <span class="skill-icon">🧠</span>
+                        <h3 class="skill-title">Machine Learning</h3>
+                        <p class="skill-description">Computer Vision, Natural Language Processing, Recommender Systems, Graph Neural Networks, Deep Learning Architectures</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <span class="skill-icon">⚙️</span>
+                        <h3 class="skill-title">MLOps & Infrastructure</h3>
+                        <p class="skill-description">CI/CD Pipelines, Model Deployment, Monitoring Systems, Docker, Kubernetes, Version Control, Production ML</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <span class="skill-icon">👥</span>
+                        <h3 class="skill-title">Technical Leadership</h3>
+                        <p class="skill-description">Team Management, Cross-functional Collaboration, Stakeholder Communication, Executive Presentations, Mentorship</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <span class="skill-icon">📊</span>
+                        <h3 class="skill-title">Product Strategy</h3>
+                        <p class="skill-description">Roadmap Development, A/B Testing Frameworks, Metrics Definition, ROI Analysis, Competitive Analysis, Prioritization</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <span class="skill-icon">🗄️</span>
+                        <h3 class="skill-title">Data Engineering</h3>
+                        <p class="skill-description">SQL, Neo4j, MongoDB, PostgreSQL, Data Pipelines, ETL Processes, Big Data Technologies, Apache Spark</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <span class="skill-icon">🛠️</span>
+                        <h3 class="skill-title">Frameworks & Tools</h3>
+                        <p class="skill-description">TensorFlow, PyTorch, Scikit-learn, Pandas, NumPy, AWS SageMaker, GCP AI Platform, Azure ML</p>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <div class="section-divider">
+            <span class="section-divider-ornament">❦ ❦ ❦</span>
+        </div>
+
         <footer id="contact">
-            <div class="social-links">
-                <a href="#" aria-label="GitHub">📧</a>
-                <a href="#" aria-label="LinkedIn">💼</a>
-                <a href="#" aria-label="Twitter">🐦</a>
-                <a href="#" aria-label="Dribbble">🎯</a>
+            <div class="footer-content">
+                <h2 class="footer-title">Let's Connect</h2>
+                <p class="footer-subtitle">Open to discussing opportunities in technical leadership and AI product development</p>
+                
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Email" title="Email">
+                        📧
+                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn" title="LinkedIn">
+                        💼
+                    </a>
+                    <a href="#" class="social-link" aria-label="GitHub" title="GitHub">
+                        ⚡
+                    </a>
+                    <a href="#" class="social-link" aria-label="Portfolio" title="Portfolio">
+                        📄
+                    </a>
+                </div>
+
+                <p class="copyright">&copy; 2026 Technical Data Science Portfolio — Crafted with Scholarly Precision</p>
             </div>
-            <p>&copy; 2026 Portfolio. All rights reserved.</p>
         </footer>
     </div>
 </body>
