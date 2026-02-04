@@ -4,1102 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Science Manager — Portfolio</title>
+    <title>Technical Product Manager (AI/ML) — Portfolio</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
         rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --bg: #f5f9ff;
-            --surface: #ffffff;
-            --text: #001f66;
-            --text-secondary: #0033cc;
-            --text-muted: #6699ff;
-            --accent: #0044ff;
-            --accent-secondary: #ffff00;
-            --accent-bright: #ffff00;
-            --border: #0044ff;
-            --border-dark: #001f66;
-            --shadow: 4px 4px 0px #ffff00;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background: var(--bg);
-            background-image:
-                linear-gradient(rgba(0, 68, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 68, 255, 0.03) 1px, transparent 1px);
-            background-size: 40px 40px;
-            color: var(--text);
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: 16px;
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 3rem;
-        }
-
-        /* Header */
-        header {
-            border-bottom: 2px solid var(--border-dark);
-            background: var(--bg);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 80px;
-        }
-
-        .logo {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 1.1rem;
-            font-weight: 800;
-            color: var(--text);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            border: 3px solid var(--border-dark);
-            padding: 0.5rem 1rem;
-            background: var(--accent-bright);
-            box-shadow: 4px 4px 0px var(--accent);
-        }
-
-        nav ul {
-            display: flex;
-            gap: 0;
-            list-style: none;
-        }
-
-        nav a {
-            color: var(--text);
-            text-decoration: none;
-            font-size: 0.875rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 1rem 1.5rem;
-            border-left: 1px solid var(--border);
-            transition: all 0.2s ease;
-        }
-
-        nav li:first-child a {
-            border-left: none;
-        }
-
-        nav a:hover {
-            background: var(--accent);
-            color: white;
-            box-shadow: 4px 4px 0px var(--accent-secondary);
-        }
-
-        /* Hero */
-        .hero {
-            padding: 8rem 0 6rem;
-            border-bottom: 2px solid var(--border-dark);
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 400px;
-            gap: 4rem;
-            align-items: start;
-        }
-
-        .hero-header {
-            display: flex;
-            align-items: center;
-            gap: 3rem;
-            margin-bottom: 2.5rem;
-        }
-
-        .profile-img {
-            width: 180px;
-            height: 180px;
-            border: 4px solid var(--border-dark);
-            box-shadow: 8px 8px 0px var(--accent);
-            object-fit: cover;
-            background: var(--accent-bright);
-        }
-
-        .hero-content h1 {
-            font-size: clamp(3rem, 7vw, 6rem);
-            font-weight: 900;
-            line-height: 0.95;
-            letter-spacing: -3px;
-            text-transform: uppercase;
-            margin-bottom: 0;
-        }
-
-        .hero-content .accent-line {
-            display: block;
-            color: var(--accent);
-        }
-
-        .hero-subtitle {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .hero-description {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: var(--text-secondary);
-            margin-bottom: 3rem;
-            background: rgba(0, 68, 255, 0.05);
-            padding: 1.5rem;
-            border-left: 4px solid var(--accent);
-        }
-
-        .hero-stats {
-            border: 3px solid var(--border-dark);
-            background: var(--surface);
-            box-shadow: 8px 8px 0px var(--accent);
-        }
-
-        .stat-item {
-            padding: 2rem;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .stat-item:last-child {
-            border-bottom: none;
-        }
-
-        .stat-value {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--text);
-            display: block;
-            margin-bottom: 0.25rem;
-        }
-
-        .stat-label {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 700;
-        }
-
-        .cta-group {
-            display: flex;
-            gap: 0;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-            padding: 1.25rem 2rem;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.875rem;
-            transition: all 0.2s ease;
-            border: 2px solid var(--border-dark);
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-        }
-
-        .btn-primary {
-            background: var(--accent);
-            color: white;
-            box-shadow: 4px 4px 0px var(--accent-secondary);
-        }
-
-        .btn-primary:hover {
-            background: var(--text);
-            transform: translate(-2px, -2px);
-            box-shadow: 6px 6px 0px var(--accent-secondary);
-        }
-
-        .btn-secondary {
-            background: var(--surface);
-            color: var(--text);
-            border-left: none;
-            box-shadow: 4px 4px 0px var(--accent);
-        }
-
-        .btn-secondary:hover {
-            background: var(--accent-bright);
-            transform: translate(-2px, -2px);
-            box-shadow: 6px 6px 0px var(--accent);
-        }
-
-        /* Section */
-        .section {
-            padding: 6rem 0;
-            border-bottom: 2px solid var(--border-dark);
-        }
-
-        .section-header {
-            display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 4rem;
-            margin-bottom: 4rem;
-            align-items: start;
-        }
-
-        .section-meta {
-            position: sticky;
-            top: 100px;
-        }
-
-        .section-number {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--text-muted);
-            margin-bottom: 1rem;
-            letter-spacing: 2px;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: var(--text);
-            letter-spacing: -1px;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-        }
-
-        .section-description {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            line-height: 1.7;
-        }
-
-        /* Ideation Cards */
-        .ideation-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            border: none;
-        }
-
-        .ideation-card {
-            padding: 3rem;
-            background: var(--surface);
-            border: 3px solid var(--border-dark);
-            box-shadow: 6px 6px 0px var(--accent-secondary);
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .ideation-card:hover {
-            transform: translate(-4px, -4px);
-            box-shadow: 10px 10px 0px var(--accent);
-        }
-
-        .ideation-category {
-            position: absolute;
-            top: 1.5rem;
-            left: 1.5rem;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.7rem;
-            color: var(--text);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 800;
-            background: var(--accent-bright);
-            border: 2px solid var(--border-dark);
-            padding: 0.4rem 0.8rem;
-            box-shadow: 2px 2px 0px var(--border-dark);
-            z-index: 5;
-        }
-
-        .ideation-title {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--text);
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: -0.5px;
-            padding-top: 1rem;
-            /* Space for tag */
-        }
-
-        .ideation-description {
-            color: var(--text-secondary);
-            line-height: 1.7;
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-            margin-top: 1rem;
-            /* Adjust for tag position */
-        }
-
-        .ideation-metrics {
-            display: flex;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .ideation-metric {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .ideation-metric strong {
-            color: var(--text);
-            font-weight: 700;
-        }
-
-        /* Product Cards */
-        .product-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-        }
-
-        .product-item {
-            border: 3px solid var(--border-dark);
-            background: var(--surface);
-            margin-bottom: 2rem;
-            box-shadow: 8px 8px 0px var(--accent-secondary);
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .product-item:hover {
-            transform: translate(-4px, -4px);
-            box-shadow: 12px 12px 0px var(--accent);
-        }
-
-        .product-header {
-            padding: 3rem;
-            border-bottom: 1px solid var(--border);
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 2rem;
-            align-items: start;
-        }
-
-        .product-title {
-            font-size: 2rem;
-            font-weight: 900;
-            color: var(--text);
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: -1px;
-        }
-
-        .product-role {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 0.5rem;
-        }
-
-        .product-date {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.875rem;
-            color: var(--text-muted);
-        }
-
-        .product-tag {
-            position: absolute;
-            top: 1.5rem;
-            left: 1.5rem;
-            border: 2px solid var(--border-dark);
-            background: var(--accent-bright);
-            color: var(--text);
-            padding: 0.4rem 0.8rem;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.7rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 2px 2px 0px var(--border-dark);
-            z-index: 5;
-        }
-
-        .product-metrics {
-            padding: 2rem 3rem;
-            background: var(--surface);
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 0;
-        }
-
-        .metric {
-            padding: 1.5rem;
-            border-right: 1px solid var(--border);
-        }
-
-        .metric:last-child {
-            border-right: none;
-        }
-
-        .metric-value {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--text);
-            line-height: 1;
-            margin-bottom: 0.5rem;
-        }
-
-        .metric-label {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-        }
-
-        .product-content {
-            padding: 3rem;
-        }
-
-        .product-achievements {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .product-achievements li {
-            padding-left: 2rem;
-            position: relative;
-            color: var(--text-secondary);
-            line-height: 1.7;
-        }
-
-        .product-achievements li::before {
-            content: '■';
-            position: absolute;
-            left: 0;
-            top: 0;
-            color: var(--text);
-            font-size: 0.75rem;
-        }
-
-        .product-achievements strong {
-            color: var(--text);
-            font-weight: 700;
-        }
-
-        .tech-stack {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 0;
-            border: 1px solid var(--border);
-        }
-
-        .tech-tag {
-            padding: 1rem;
-            background: var(--surface);
-            border: 1px solid var(--border-dark);
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
-            color: var(--text);
-            font-weight: 700;
-            text-transform: uppercase;
-            text-align: center;
-            transition: all 0.2s ease;
-        }
-
-        .tech-tag:hover {
-            background: var(--accent-secondary);
-            color: var(--text);
-            transform: scale(1.05);
-        }
-
-        /* Skills Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            border: none;
-        }
-
-        .skill-card {
-            padding: 3rem;
-            background: var(--surface);
-            border: 3px solid var(--border-dark);
-            box-shadow: 6px 6px 0px var(--accent);
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .skill-card:hover {
-            transform: translate(-4px, -4px);
-            box-shadow: 10px 10px 0px var(--accent-bright);
-            background: var(--surface);
-        }
-
-        .skill-card:hover .skill-icon {
-            background: var(--accent);
-        }
-
-        .skill-card:hover .skill-description,
-        .skill-card:hover .skill-list-item {
-            color: var(--bg);
-        }
-
-        .skill-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--surface);
-            border: 2px solid var(--border-dark);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.75rem;
-            margin-bottom: 2rem;
-            transition: all 0.3s ease;
-        }
-
-        .skill-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--text);
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: -0.5px;
-        }
-
-        .skill-card:hover .skill-title {
-            color: var(--bg);
-        }
-
-        .skill-description {
-            color: var(--text-secondary);
-            line-height: 1.6;
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .skill-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .skill-list-item {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .skill-list-item::before {
-            content: '▸ ';
-            color: var(--accent);
-        }
-
-        /* Footer */
-        footer {
-            padding: 6rem 0 4rem;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1fr 400px;
-            gap: 4rem;
-            align-items: start;
-        }
-
-        .footer-info h2 {
-            font-size: 3rem;
-            font-weight: 900;
-            color: var(--text);
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: -1px;
-        }
-
-        .footer-info p {
-            font-size: 1.125rem;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-        }
-
-        .footer-contact {
-            border: 2px solid var(--border-dark);
-            background: var(--surface);
-        }
-
-        .contact-item {
-            padding: 1.5rem;
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            transition: all 0.2s ease;
-            text-decoration: none;
-            color: var(--text);
-        }
-
-        .contact-item:last-child {
-            border-bottom: none;
-        }
-
-        .contact-item:hover {
-            background: var(--text);
-            color: var(--bg);
-        }
-
-        .contact-icon {
-            width: 40px;
-            height: 40px;
-            border: 2px solid var(--border-dark);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.25rem;
-            background: var(--bg);
-        }
-
-        .contact-item:hover .contact-icon {
-            background: var(--accent-secondary);
-            border-color: var(--border-dark);
-            box-shadow: 2px 2px 0px var(--accent);
-        }
-
-        .contact-label {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 700;
-        }
-
-        .copyright {
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border);
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Responsive */
-        @media (max-width: 1200px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-stats {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .stat-item {
-                border-right: 1px solid var(--border);
-                border-bottom: 1px solid var(--border);
-            }
-
-            .stat-item:nth-child(2n) {
-                border-right: none;
-            }
-
-            .stat-item:nth-child(n+3) {
-                border-bottom: none;
-            }
-
-            .section-header {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .section-meta {
-                position: static;
-            }
-
-            .ideation-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .ideation-card {
-                border-right: none;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 1.5rem;
-            }
-
-            nav {
-                flex-direction: column;
-                height: auto;
-                padding: 1rem 0;
-                gap: 1rem;
-            }
-
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .hero {
-                padding: 4rem 0 3rem;
-            }
-
-            .hero-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1.5rem;
-            }
-
-            .profile-img {
-                width: 120px;
-                height: 120px;
-            }
-
-            .hero-content h1 {
-                font-size: 3.5rem;
-            }
-
-            .cta-group {
-                flex-direction: column;
-            }
-
-            .btn-secondary {
-                border-left: 2px solid var(--border-dark);
-                border-top: none;
-            }
-
-            .hero-stats {
-                grid-template-columns: 1fr;
-            }
-
-            .stat-item {
-                border-right: none;
-            }
-
-            .product-header {
-                grid-template-columns: 1fr;
-            }
-
-            .product-metrics {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .metric {
-                border-right: none;
-                border-bottom: 1px solid var(--border);
-            }
-
-            .metric:nth-child(2n) {
-                border-right: none;
-            }
-
-            .metric:nth-child(n+3) {
-                border-bottom: none;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .skill-card {
-                border-right: none;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .tech-stack {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        /* Collapsible Section Styles */
-        .product-item,
-        .ideation-card {
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Toggle Cue Improvements */
-        .product-item::before,
-        .ideation-card::before {
-            content: 'VIEW DETAILS';
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.7rem;
-            font-weight: 800;
-            position: absolute;
-            top: 1.5rem;
-            right: 4.5rem;
-            transform: none;
-            color: var(--accent);
-            opacity: 0.8;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 2px solid var(--accent);
-            padding: 0.4rem 1rem;
-            background: var(--accent-secondary);
-            z-index: 10;
-            box-shadow: 3px 3px 0px var(--border-dark);
-            letter-spacing: 1px;
-        }
-
-        .product-item:hover::before,
-        .ideation-card:hover::before {
-            opacity: 1;
-            top: 1.35rem;
-            box-shadow: 5px 5px 0px var(--border-dark);
-        }
-
-        .product-item.active::before,
-        .ideation-card.active::before {
-            content: 'CLOSE';
-            background: var(--surface);
-            color: var(--text-muted);
-            border-color: var(--text-muted);
-            box-shadow: none;
-            top: 1.5rem;
-        }
-
-        .product-item::after,
-        .ideation-card::after {
-            content: '▼';
-            font-family: 'JetBrains Mono', monospace;
-            position: absolute;
-            top: 2rem;
-            right: 2.2rem;
-            font-size: 1rem;
-            font-weight: 900;
-            line-height: 1;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            color: var(--accent);
-            z-index: 11;
-        }
-
-        .product-item.active::after,
-        .ideation-card.active::after {
-            transform: rotate(180deg);
-            color: var(--text-muted);
-            top: 2rem;
-        }
-
-        .collapsible-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-            opacity: 0;
-        }
-
-        .active .collapsible-content {
-            max-height: 2000px;
-            opacity: 1;
-            padding-bottom: 2rem;
-        }
-
-        /* Adjustments for specific components */
-        .product-item,
-        .ideation-card {
-            padding-top: 4rem;
-            /* Ensure space for top-aligned cues */
-        }
-
-        /* Blog Folder Styling */
-        .blog-folders {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .blog-folder {
-            border: 3px solid var(--border-dark);
-            background: var(--surface);
-            position: relative;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 6px 6px 0px var(--accent);
-        }
-
-        .blog-folder:hover {
-            transform: translate(-4px, -4px);
-            box-shadow: 10px 10px 0px var(--accent);
-        }
-
-        .folder-tab {
-            background: var(--border-dark);
-            color: var(--accent-bright);
-            padding: 0.5rem 1.5rem;
-            font-family: 'JetBrains Mono', monospace;
-            font-weight: 800;
-            font-size: 0.8rem;
-            display: inline-block;
-            clip-path: polygon(0 0, 85% 0, 100% 100%, 0% 100%);
-            margin-top: -30px;
-            margin-left: -3px;
-        }
-
-        .blog-folder .folder-content {
-            padding: 2rem;
-            max-height: 0;
-            overflow: hidden;
-            transition: all 0.5s ease;
-            opacity: 0;
-        }
-
-        .blog-folder.active .folder-content {
-            max-height: 1000px;
-            opacity: 1;
-            padding-bottom: 3rem;
-        }
-
-        .blog-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .blog-item {
-            padding: 1.5rem;
-            border: 2px solid var(--border);
-            background: rgba(0, 68, 255, 0.02);
-            transition: all 0.2s ease;
-        }
-
-        .blog-item:hover {
-            background: var(--accent-bright);
-            border-color: var(--border-dark);
-            box-shadow: 4px 4px 0px var(--border-dark);
-        }
-
-        .blog-date {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .blog-item-title {
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-            color: var(--text);
-        }
-
-        .blog-item-preview {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        /* Modal Styling */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 31, 102, 0.8);
-            backdrop-filter: blur(5px);
-        }
-
-        .modal-content {
-            background-color: var(--bg);
-            margin: 5% auto;
-            padding: 4rem;
-            border: 4px solid var(--border-dark);
-            width: 80%;
-            max-width: 900px;
-            max-height: 80vh;
-            overflow-y: auto;
-            box-shadow: 15px 15px 0px var(--accent);
-            position: relative;
-        }
-
-        .close-modal {
-            color: var(--text);
-            position: absolute;
-            top: 1rem;
-            right: 2rem;
-            font-size: 3rem;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .close-modal:hover {
-            color: var(--accent);
-        }
-
-        .markdown-body h1 {
-            color: var(--accent);
-            margin-bottom: 2rem;
-            border-bottom: 3px solid var(--border-dark);
-            padding-bottom: 1rem;
-        }
-
-        .markdown-body h2 {
-            margin: 2rem 0 1rem;
-            color: var(--text);
-        }
-
-        .markdown-body p {
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-            font-size: 1.1rem;
-        }
-
-        .product-header {
-            border-bottom: 3px solid var(--accent);
-            margin-bottom: 2rem;
-            padding-top: 1rem;
-            /* Adjust internal space */
-        }
-
-        .active .product-header {
-            border-bottom-color: var(--border-dark);
-        }
-
-        .product-metrics {
-            border: 2px solid var(--border-dark);
-            margin: 0 3rem 2rem;
-            background: rgba(0, 68, 255, 0.05);
-        }
-
-        .product-skills-visible {
-            padding: 0 3rem 1.5rem;
-        }
-
-        .ideation-metrics {
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border-dark);
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -1111,7 +20,6 @@
                     <li><a href="#products">Products</a></li>
                     <li><a href="#ideation">Ideation</a></li>
                     <li><a href="#skills">Skills</a></li>
-                    <li><a href="#blog">Blog</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -1124,18 +32,31 @@
                 <div class="hero-grid">
                     <div class="hero-content">
                         <div class="hero-header">
-                            <img src="IMG_0704.jpg"
-                                alt="Het Thakkar" class="profile-img">
-                            <h1>
-                                <span class="accent-line">Het Thakkar</span>
-                            </h1>
+                            <img src="IMG_0704.jpg" alt="Het Thakkar" class="profile-img">
+                            <div class="hero-header-text">
+                                <h1>
+                                    <span class="accent-line">Het Thakkar</span>
+                                </h1>
+                                <div class="hero-contact-links">
+                                    <a href="mailto:thakkarhet0@gmail.com" class="hero-contact-item">
+                                        <span class="contact-icon">📧</span>
+                                        <span class="contact-label">Email</span>
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/het-thakkar-a58280141/" target="_blank"
+                                        class="hero-contact-item">
+                                        <span class="contact-icon">💼</span>
+                                        <span class="contact-label">LinkedIn</span>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                         <p class="hero-subtitle">Technical Product Manager (AI/ML)</p>
                         <p class="hero-description">
-                            Data Science leader specializing in 0→1 AI product development with expertise in driving
-                            product strategy from ideation to execution. Experience spanning e-commerce, fintech, and
-                            agentic platforms, with deep technical knowledge in AI/ML systems, product management, and
-                            cross-functional team leadership.
+                            I'm a Technical Product Manager with a background in AI/ML engineering. I've led product
+                            development across multiple domains, and I'm currently a startup co-founder leading the
+                            product strategy and development side of things.
+                            I love the 0→1 phase! Alongside this, I'm currently exploring research in the associative
+                            memory, meta-learning, side of things within neuroai. I like reading!
                         </p>
                         <div class="cta-group">
                             <a href="#contact" class="btn btn-primary">
@@ -1150,16 +71,16 @@
 
                     <div class="hero-stats">
                         <div class="stat-item">
-                            <span class="stat-value">3</span>
-                            <span class="stat-label">Products Built</span>
-                        </div>
-                        <div class="stat-item">
                             <span class="stat-value">4+</span>
                             <span class="stat-label">Years Experience</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-value">15+</span>
+                            <span class="stat-value">10+</span>
                             <span class="stat-label">AI Solutions</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">3</span>
+                            <span class="stat-label">Products</span>
                         </div>
                         <div class="stat-item">
                             <span class="stat-value">70+</span>
@@ -1240,7 +161,7 @@
                                         cross-functional collaboration between ML, backend, and frontend teams</li>
 
                                     <li><strong>Owned end-to-end product development</strong> including technical
-                                        research, competitive analysis, feature prioritization (RICE), MVP scoping,
+                                        research, competitive analysis, feature prioritization, hands-on AI development,
                                         and
                                         phased rollout strategy</li>
 
@@ -1312,7 +233,8 @@
                         <div class="collapsible-content">
                             <div class="product-content">
                                 <ul class="product-achievements">
-                                    <li><strong>Leading product strategy for debt recovery & credit platform</strong>
+                                    <li><strong>Leading product strategy for financial recovery & credit
+                                            platform</strong>
                                         targeting MSME financial recovery. Applying lean startup methodologies for
                                         market
                                         validation and product development</li>
@@ -1402,7 +324,8 @@
                                         opportunities</li>
 
                                     <li><strong>Scoping core features</strong>: community discovery/joining, event
-                                        creation/RSVP, member profiles with business listings, referral tracking, and
+                                        creation/RSVP, matrimony, groups, member profiles with business listings,
+                                        referral tracking, and
                                         in-app
                                         messaging</li>
 
@@ -1438,14 +361,14 @@
                         <h3 class="ideation-title">OCR Automation System</h3>
                         <div class="collapsible-content">
                             <p class="ideation-description">
-                                Scoped tax form OCR system with extraction and auto-fill capabilities for financial
-                                services. Defined 95%+ accuracy targets and phased MVP delivering 70% efficiency gains
+                                Tax form OCR system with extraction and auto-fill capabilities for financial services.
+                                Defined 90%+ true positive targets and phased MVP delivering 70% efficiency gains
                                 through document AI and validation logic.
                             </p>
                         </div>
                         <div class="ideation-metrics">
-                            <span class="ideation-metric"><strong>Target:</strong> 95%+ accuracy</span>
-                            <span class="ideation-metric"><strong>Timeline:</strong> 3-4 months</span>
+                            <span class="ideation-metric"><strong>Target:</strong> 90%+ true positive</span>
+                            <span class="ideation-metric"><strong>Timeline:</strong> 4-6 months</span>
                             <span class="ideation-metric"><strong>Impact:</strong> 70% efficiency</span>
                         </div>
                     </article>
@@ -1456,15 +379,14 @@
                         <div class="collapsible-content">
                             <p class="ideation-description">
                                 Led discovery for AI agent using graph neural networks and ontology-based
-                                recommendations.
+                                recommendations using neo4j.
                                 Validated product-market fit through user research, establishing framework for
-                                intelligent
-                                travel planning.
+                                intelligent travel planning.
                             </p>
                         </div>
                         <div class="ideation-metrics">
-                            <span class="ideation-metric"><strong>Tech:</strong> GNN + Ontology</span>
-                            <span class="ideation-metric"><strong>Research:</strong> User validation</span>
+                            <span class="ideation-metric"><strong>Tech:</strong> GNN + Ontology(neo4j)</span>
+                            <span class="ideation-metric"><strong>Research:</strong> NeuroSymbolic AI</span>
                             <span class="ideation-metric"><strong>Focus:</strong> Personalization</span>
                         </div>
                     </article>
@@ -1474,17 +396,17 @@
                         <h3 class="ideation-title">Recommendation Engines</h3>
                         <div class="collapsible-content">
                             <p class="ideation-description">
-                                Designed gifting and hardware product recommendation systems with success metrics
-                                focused on
-                                CTR, conversion optimization, and personalization accuracy. Established KPI frameworks
-                                for
-                                continuous improvement.
+                                Designed fashion, gifting and hardware product recommendation systems with success
+                                metrics
+                                focused on CTR, conversion optimization, and personalization accuracy. Established KPI
+                                frameworks
+                                for continuous improvement.
                             </p>
                         </div>
                         <div class="ideation-metrics">
                             <span class="ideation-metric"><strong>Metrics:</strong> CTR + Conversion</span>
-                            <span class="ideation-metric"><strong>Type:</strong> Hybrid systems</span>
-                            <span class="ideation-metric"><strong>Output:</strong> Business cases</span>
+                            <span class="ideation-metric"><strong>Type:</strong>Content based + Collaborative</span>
+                            <span class="ideation-metric"><strong>Focus:</strong> Personalization again</span>
                         </div>
                     </article>
 
@@ -1524,12 +446,12 @@
                     </article>
 
                     <article class="ideation-card" onclick="this.classList.toggle('active')">
-                        <div class="ideation-category">Startup Strategy</div>
+                        <div class="ideation-category">Startup</div>
                         <h3 class="ideation-title">Dual-Product Validation</h3>
                         <div class="collapsible-content">
                             <p class="ideation-description">
                                 Led market discovery for fintech (Chaaritra - debt recovery platform) and community
-                                networking (Odkhaan). Conducted 40+ customer interviews, competitive analysis, and
+                                networking (Odkhaan). Conducted 70+ customer interviews, competitive analysis, and
                                 TAM/SAM/SOM sizing to validate opportunities.
                             </p>
                         </div>
@@ -1556,231 +478,78 @@
                     </div>
                 </div>
 
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <div class="skill-icon">🧠</div>
-                        <h3 class="skill-title">Machine Learning</h3>
-                        <p class="skill-description">Deep expertise in building and deploying production ML systems</p>
-                        <div class="skill-list">
-                            <div class="skill-list-item">Computer Vision</div>
-                            <div class="skill-list-item">Generative Models and finetuning</div>
-                            <div class="skill-list-item">Recommender Systems</div>
-                            <div class="skill-list-item">Graph Neural Networks</div>
-                            <div class="skill-list-item">Agentic LLMs</div>
+                <div class="skills-compact-container">
+                    <!-- Machine Learning -->
+                    <div class="skill-category-group">
+                        <div class="skill-category-badge">ML_CORE</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag-mini">Computer Vision</span>
+                            <span class="skill-tag-mini">Generative Models</span>
+                            <span class="skill-tag-mini">Recommender Systems</span>
+                            <span class="skill-tag-mini">Graph Neural Networks</span>
+                            <span class="skill-tag-mini">Agentic LLMs</span>
                         </div>
                     </div>
 
-                    <div class="skill-card">
-                        <div class="skill-icon">⚙️</div>
-                        <h3 class="skill-title">MLOps</h3>
-                        <p class="skill-description">End-to-end pipeline development and production deployment</p>
-                        <div class="skill-list">
-                            <div class="skill-list-item">CI/CD Pipelines</div>
-                            <div class="skill-list-item">Docker</div>
-                            <div class="skill-list-item">Model Monitoring</div>
-                            <div class="skill-list-item">Version Control</div>
-                            <div class="skill-list-item">AWS</div>
+                    <!-- MLOps -->
+                    <div class="skill-category-group">
+                        <div class="skill-category-badge">OPS_INFRA</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag-mini">CI/CD Pipelines</span>
+                            <span class="skill-tag-mini">Docker</span>
+                            <span class="skill-tag-mini">Model Monitoring</span>
+                            <span class="skill-tag-mini">Version Control</span>
+                            <span class="skill-tag-mini">AWS</span>
                         </div>
                     </div>
 
-                    <div class="skill-card">
-                        <div class="skill-icon">👥</div>
-                        <h3 class="skill-title">Leadership</h3>
-                        <p class="skill-description">Building and scaling high-performing engineering teams</p>
-                        <div class="skill-list">
-                            <div class="skill-list-item">Team Management</div>
-                            <div class="skill-list-item">Mentorship</div>
-                            <div class="skill-list-item">Cross-functional</div>
-                            <div class="skill-list-item">Stakeholder Mgmt</div>
-                            <div class="skill-list-item">Executive Comms</div>
+                    <!-- Leadership -->
+                    <div class="skill-category-group">
+                        <div class="skill-category-badge">LEADERSHIP</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag-mini">Team Management</span>
+                            <span class="skill-tag-mini">Mentorship</span>
+                            <span class="skill-tag-mini">Cross-functional</span>
+                            <span class="skill-tag-mini">Stakeholder Mgmt</span>
+                            <span class="skill-tag-mini">Executive Comms</span>
                         </div>
                     </div>
 
-                    <div class="skill-card">
-                        <div class="skill-icon">📊</div>
-                        <h3 class="skill-title">Product Strategy</h3>
-                        <p class="skill-description">Data-driven product development and roadmap planning</p>
-                        <div class="skill-list">
-                            <div class="skill-list-item">Roadmapping</div>
-                            <div class="skill-list-item">A/B Testing</div>
-                            <div class="skill-list-item">Metrics Definition</div>
-                            <div class="skill-list-item">ROI Analysis</div>
-                            <div class="skill-list-item">Prioritization</div>
+                    <!-- Product & Data -->
+                    <div class="skill-category-group">
+                        <div class="skill-category-badge">STRATEGY_&_DATA</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag-mini">Roadmapping</span>
+                            <span class="skill-tag-mini">A/B Testing</span>
+                            <span class="skill-tag-mini">ROI Analysis</span>
+                            <span class="skill-tag-mini">SQL / NoSQL</span>
+                            <span class="skill-tag-mini">Neo4j</span>
+                            <span class="skill-tag-mini">ETL Pipelines</span>
                         </div>
                     </div>
 
-                    <div class="skill-card">
-                        <div class="skill-icon">🗄️</div>
-                        <h3 class="skill-title">Data Engineering</h3>
-                        <p class="skill-description">Scalable data pipelines and infrastructure</p>
-                        <div class="skill-list">
-                            <div class="skill-list-item">SQL / NoSQL</div>
-                            <div class="skill-list-item">Neo4j</div>
-                            <div class="skill-list-item">ETL Pipelines</div>
-                            <div class="skill-list-item">Data Modeling</div>
-                        </div>
-                    </div>
-
-                    <div class="skill-card">
-                        <div class="skill-icon">🛠️</div>
-                        <h3 class="skill-title">Tools & Frameworks</h3>
-                        <p class="skill-description">Modern ML and development tooling</p>
-                        <div class="skill-list">
-                            <div class="skill-list-item">Python</div>
-                            <div class="skill-list-item">PyTorch</div>
-                            <div class="skill-list-item">Huggingface</div>
-                            <div class="skill-list-item">n8n</div>
-                            <div class="skill-list-item">Git</div>
+                    <!-- Tools -->
+                    <div class="skill-category-group">
+                        <div class="skill-category-badge">STACK</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag-mini">Python</span>
+                            <span class="skill-tag-mini">PyTorch</span>
+                            <span class="skill-tag-mini">Huggingface</span>
+                            <span class="skill-tag-mini">n8n</span>
+                            <span class="skill-tag-mini">Git</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="blog" class="section">
-            <div class="container">
-                <div class="section-header">
-                    <div class="section-meta">
-                        <div class="section-number">[04]</div>
-                        <h2 class="section-title">Blog</h2>
-                        <p class="section-description">Insights on product building, AI research, and the future of
-                            intelligence</p>
-                    </div>
-                </div>
-
-                <div class="blog-folders">
-                    <!-- Folder 1: Product Strategy -->
-                    <div class="blog-folder" onclick="this.classList.toggle('active')">
-                        <div class="folder-tab">PRODUCT_STRATEGY</div>
-                        <div class="folder-content">
-                            <div class="blog-list">
-                                <div class="blog-item"
-                                    onclick="event.stopPropagation(); loadBlog('blogs/product-strategy/pm-v-ds.md')">
-                                    <span class="blog-date">2026.02.04</span>
-                                    <h4 class="blog-item-title">The Shift from Data Science to Product Management</h4>
-                                    <p class="blog-item-preview">Mindset shifts and strategic prioritization in
-                                        technical leadership...</p>
-                                </div>
-                                <div class="blog-item"
-                                    onclick="event.stopPropagation(); loadBlog('blogs/product-strategy/rice-scoring.md')">
-                                    <span class="blog-date">2026.02.01</span>
-                                    <h4 class="blog-item-title">Applying RICE Scoring to AI Projects</h4>
-                                    <p class="blog-item-preview">Tuning standard frameworks for the volatility of ML
-                                        development...</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Folder 2: Research & Intelligence -->
-                    <div class="blog-folder" onclick="this.classList.toggle('active')">
-                        <div class="folder-tab">RESEARCH_AND_INTELLIGENCE</div>
-                        <div class="folder-content">
-                            <div class="blog-list">
-                                <div class="blog-item"
-                                    onclick="event.stopPropagation(); loadBlog('blogs/research-intelligence/ai-ethics.md')">
-                                    <span class="blog-date">2026.01.28</span>
-                                    <h4 class="blog-item-title">The Ethics of Generative AI in Fashion</h4>
-                                    <p class="blog-item-preview">Mitigating style bias in vision-based recommendation
-                                        systems...</p>
-                                </div>
-                                <div class="blog-item"
-                                    onclick="event.stopPropagation(); loadBlog('blogs/research-intelligence/llm-scaling.md')">
-                                    <span class="blog-date">2026.01.15</span>
-                                    <h4 class="blog-item-title">Scaling LLMs for Niche Domain Applications</h4>
-                                    <p class="blog-item-preview">Optimization and factuality in high-stakes Fintech
-                                        environments...</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Blog Modal -->
-        <div id="blogModal" class="modal">
-            <div class="modal-content">
-                <span class="close-modal" onclick="closeModal()">&times;</span>
-                <div id="blogBody" class="markdown-body">
-                    <!-- Content will be loaded here -->
-                </div>
-            </div>
-        </div>
 
         <script>
             // Add no-select to cards
-            document.querySelectorAll('.product-item, .ideation-card, .skill-card, .blog-folder').forEach(card => {
+            document.querySelectorAll('.product-item, .ideation-card, .skill-card').forEach(card => {
                 card.style.userSelect = 'none';
                 card.style.webkitUserSelect = 'none';
             });
-
-            // Blog Loading Logic
-            function loadBlog(filePath, updateHash = true) {
-                const modal = document.getElementById('blogModal');
-                const blogBody = document.getElementById('blogBody');
-
-                modal.style.display = 'block';
-                blogBody.innerHTML = '<div class="loading">Sourcing Intelligence...</div>';
-
-                // Update hash for deep linking (e.g., #blog/pm-v-ds)
-                if (updateHash) {
-                    const blogName = filePath.split('/').pop().replace('.md', '');
-                    history.pushState(null, null, `#blog/${blogName}`);
-                }
-
-                fetch(filePath)
-                    .then(response => {
-                        if (!response.ok) throw new Error('Could not load markdown file.');
-                        return response.text();
-                    })
-                    .then(text => {
-                        blogBody.innerHTML = marked.parse(text);
-                        // Ensure the modal scrolls to top
-                        document.querySelector('.modal-content').scrollTop = 0;
-                    })
-                    .catch(error => {
-                        blogBody.innerHTML = `<p style="color:var(--accent)">Error: ${error.message}. <br>Tip: Ensure you are serving from a local or web server.</p>`;
-                    });
-            }
-
-            function closeModal() {
-                document.getElementById('blogModal').style.display = 'none';
-                // Clear hash without jump
-                history.pushState(null, null, window.location.pathname + window.location.search);
-            }
-
-            // Handle deep links from URL (e.g. sharing a link to a specific blog)
-            function handleDeepLinks() {
-                const hash = window.location.hash;
-                if (hash.startsWith('#blog/')) {
-                    const blogName = hash.replace('#blog/', '');
-                    // Map common blog names back to paths (simplified for demo)
-                    const blogPaths = {
-                        'pm-v-ds': 'blogs/product-strategy/pm-v-ds.md',
-                        'rice-scoring': 'blogs/product-strategy/rice-scoring.md',
-                        'ai-ethics': 'blogs/research-intelligence/ai-ethics.md',
-                        'llm-scaling': 'blogs/research-intelligence/llm-scaling.md'
-                    };
-
-                    if (blogPaths[blogName]) {
-                        loadBlog(blogPaths[blogName], false);
-                    }
-                }
-            }
-
-            // Listen for back/forward navigation
-            window.addEventListener('popstate', handleDeepLinks);
-            // Initial check
-            handleDeepLinks();
-
-            // Close modal when clicking outside
-            window.onclick = function (event) {
-                const modal = document.getElementById('blogModal');
-                if (event.target == modal) {
-                    closeModal();
-                }
-            }
         </script>
     </main>
 
@@ -1794,21 +563,13 @@
                 </div>
 
                 <div class="footer-contact">
-                    <a href="#" class="contact-item">
+                    <a href="mailto:thakkarhet0@gmail.com" class="contact-item">
                         <div class="contact-icon">📧</div>
                         <div class="contact-label">Email</div>
                     </a>
-                    <a href="#" class="contact-item">
+                    <a href="https://www.linkedin.com/in/het-thakkar-a58280141/" target="_blank" class="contact-item">
                         <div class="contact-icon">💼</div>
                         <div class="contact-label">LinkedIn</div>
-                    </a>
-                    <a href="#" class="contact-item">
-                        <div class="contact-icon">⚡</div>
-                        <div class="contact-label">GitHub</div>
-                    </a>
-                    <a href="#" class="contact-item">
-                        <div class="contact-icon">📄</div>
-                        <div class="contact-label">Resume</div>
                     </a>
                 </div>
             </div>
