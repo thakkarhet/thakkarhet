@@ -12,7 +12,7 @@
             box-sizing: border-box;
         }
 
-        :root {
+        : root {
             --bg: #ffffff;
             --surface: #fafafa;
             --text: #000000;
@@ -92,7 +92,7 @@
             border-left: none;
         }
 
-        nav a:hover {
+        nav a: hover {
             background: var(--text);
             color: var(--bg);
         }
@@ -253,30 +253,104 @@
             line-height: 1.7;
         }
 
-        /* Experience Cards */
-        .experience-list {
+        /* Ideation Cards */
+        .ideation-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0;
+            border: 2px solid var(--border-dark);
+        }
+
+        .ideation-card {
+            padding: 3rem;
+            background: var(--bg);
+            border-right: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .ideation-card:nth-child(2n) {
+            border-right: none;
+        }
+
+        .ideation-card:nth-last-child(-n+2) {
+            border-bottom: none;
+        }
+
+        .ideation-card:hover {
+            background: var(--surface);
+            transform: translateY(-4px);
+        }
+
+        .ideation-category {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .ideation-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+
+        .ideation-description {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .ideation-metrics {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .ideation-metric {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .ideation-metric strong {
+            color: var(--text);
+            font-weight: 700;
+        }
+
+        /* Product Cards */
+        .product-list {
             display: flex;
             flex-direction: column;
             gap: 0;
         }
 
-        .experience-item {
+        .product-item {
             border: 2px solid var(--border-dark);
             border-top: none;
             background: var(--bg);
             transition: all 0.3s ease;
         }
 
-        .experience-item:first-child {
+        .product-item:first-child {
             border-top: 2px solid var(--border-dark);
         }
 
-        .experience-item:hover {
+        .product-item:hover {
             transform: translateX(8px);
             box-shadow: -8px 0 0 0 var(--accent);
         }
 
-        .experience-header {
+        .product-header {
             padding: 3rem;
             border-bottom: 1px solid var(--border);
             display: grid;
@@ -285,7 +359,7 @@
             align-items: start;
         }
 
-        .company-title {
+        .product-title {
             font-size: 2rem;
             font-weight: 900;
             color: var(--text);
@@ -294,7 +368,7 @@
             letter-spacing: -1px;
         }
 
-        .role-title {
+        .product-role {
             font-size: 1rem;
             color: var(--text-secondary);
             font-weight: 600;
@@ -303,13 +377,13 @@
             margin-bottom: 0.5rem;
         }
 
-        .date-range {
+        .product-date {
             font-family: 'JetBrains Mono', monospace;
             font-size: 0.875rem;
             color: var(--text-muted);
         }
 
-        .experience-tag {
+        .product-tag {
             border: 2px solid var(--border-dark);
             background: var(--accent);
             color: var(--bg);
@@ -321,7 +395,7 @@
             letter-spacing: 1px;
         }
 
-        .experience-metrics {
+        .product-metrics {
             padding: 2rem 3rem;
             background: var(--surface);
             display: grid;
@@ -355,11 +429,11 @@
             font-weight: 600;
         }
 
-        .experience-content {
+        .product-content {
             padding: 3rem;
         }
 
-        .experience-achievements {
+        .product-achievements {
             list-style: none;
             display: flex;
             flex-direction: column;
@@ -367,14 +441,14 @@
             margin-bottom: 3rem;
         }
 
-        .experience-achievements li {
+        .product-achievements li {
             padding-left: 2rem;
             position: relative;
             color: var(--text-secondary);
             line-height: 1.7;
         }
 
-        .experience-achievements li::before {
+        .product-achievements li::before {
             content: '■';
             position: absolute;
             left: 0;
@@ -383,7 +457,7 @@
             font-size: 0.75rem;
         }
 
-        .experience-achievements strong {
+        .product-achievements strong {
             color: var(--text);
             font-weight: 700;
         }
@@ -624,6 +698,14 @@
             .section-meta {
                 position: static;
             }
+
+            .ideation-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ideation-card {
+                border-right: none;
+            }
         }
 
         @media (max-width: 768px) {
@@ -668,11 +750,11 @@
                 border-right: none;
             }
 
-            .experience-header {
+            .product-header {
                 grid-template-columns: 1fr;
             }
 
-            .experience-metrics {
+            .product-metrics {
                 grid-template-columns: repeat(2, 1fr);
             }
 
@@ -708,7 +790,7 @@
 
         /* Dark mode */
         @media (prefers-color-scheme: dark) {
-            :root {
+            : root {
                 --bg: #000000;
                 --surface: #0a0a0a;
                 --text: #ffffff;
@@ -731,7 +813,8 @@
             <nav>
                 <div class="logo">Portfolio</div>
                 <ul>
-                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#ideation">Ideation</a></li>
+                    <li><a href="#products">Products</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -758,7 +841,7 @@
                                 <span>Get in Touch</span>
                                 <span>→</span>
                             </a>
-                            <a href="#experience" class="btn btn-secondary">
+                            <a href="#ideation" class="btn btn-secondary">
                                 <span>View Work</span>
                             </a>
                         </div>
@@ -766,82 +849,177 @@
 
                     <div class="hero-stats">
                         <div class="stat-item">
-                            <span class="stat-value">$2M+</span>
-                            <span class="stat-label">Revenue Impact</span>
+                            <span class="stat-value">10+</span>
+                            <span class="stat-label">AI Solutions</span>
                         </div>
                         <div class="stat-item">
                             <span class="stat-value">5+</span>
                             <span class="stat-label">Years Leadership</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-value">1M+</span>
-                            <span class="stat-label">Transactions</span>
+                            <span class="stat-value">$2M+</span>
+                            <span class="stat-label">Revenue Impact</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-value">10+</span>
-                            <span class="stat-label">ML Systems</span>
+                            <span class="stat-value">3</span>
+                            <span class="stat-label">Industries</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="experience" class="section">
+        <section id="ideation" class="section">
             <div class="container">
                 <div class="section-header">
                     <div class="section-meta">
                         <div class="section-number">[01]</div>
-                        <h2 class="section-title">Experience</h2>
-                        <p class="section-description">Building and scaling ML products that solve real business problems with measurable impact</p>
+                        <h2 class="section-title">Ideation</h2>
+                        <p class="section-description">Conceptualizing and validating AI/ML solutions from market insight to business case</p>
                     </div>
                     <div></div>
                 </div>
 
-                <div class="experience-list">
-                    <article class="experience-item">
-                        <div class="experience-header">
+                <div class="ideation-grid">
+                    <article class="ideation-card">
+                        <div class="ideation-category">Fintech</div>
+                        <h3 class="ideation-title">OCR Automation System</h3>
+                        <p class="ideation-description">
+                            Scoped tax form OCR system with extraction and auto-fill capabilities for financial services. Defined 95%+ accuracy targets and phased MVP delivering 70% efficiency gains through document AI and validation logic.
+                        </p>
+                        <div class="ideation-metrics">
+                            <span class="ideation-metric"><strong>Target:</strong> 95%+ accuracy</span>
+                            <span class="ideation-metric"><strong>Timeline:</strong> 3-4 months</span>
+                            <span class="ideation-metric"><strong>Impact:</strong> 70% efficiency</span>
+                        </div>
+                    </article>
+
+                    <article class="ideation-card">
+                        <div class="ideation-category">Tourism</div>
+                        <h3 class="ideation-title">AI Itinerary Platform</h3>
+                        <p class="ideation-description">
+                            Led discovery for AI agent using graph neural networks and ontology-based recommendations. Validated product-market fit through user research, establishing framework for intelligent travel planning.
+                        </p>
+                        <div class="ideation-metrics">
+                            <span class="ideation-metric"><strong>Tech:</strong> GNN + Ontology</span>
+                            <span class="ideation-metric"><strong>Research:</strong> User validation</span>
+                            <span class="ideation-metric"><strong>Focus:</strong> Personalization</span>
+                        </div>
+                    </article>
+
+                    <article class="ideation-card">
+                        <div class="ideation-category">E-Commerce</div>
+                        <h3 class="ideation-title">Recommendation Engines</h3>
+                        <p class="ideation-description">
+                            Designed gifting and hardware product recommendation systems with success metrics focused on CTR, conversion optimization, and personalization accuracy. Established KPI frameworks for continuous improvement.
+                        </p>
+                        <div class="ideation-metrics">
+                            <span class="ideation-metric"><strong>Metrics:</strong> CTR + Conversion</span>
+                            <span class="ideation-metric"><strong>Type:</strong> Hybrid systems</span>
+                            <span class="ideation-metric"><strong>Output:</strong> Business cases</span>
+                        </div>
+                    </article>
+
+                    <article class="ideation-card">
+                        <div class="ideation-category">Marketing</div>
+                        <h3 class="ideation-title">Segmentation Solutions</h3>
+                        <p class="ideation-description">
+                            Developed customer and marketing segmentation products with LTV tracking, cohort analysis, and funnel optimization frameworks. Reduced customer acquisition costs by 30%+ through intelligent targeting.
+                        </p>
+                        <div class="ideation-metrics">
+                            <span class="ideation-metric"><strong>Impact:</strong> 30%+ CAC reduction</span>
+                            <span class="ideation-metric"><strong>Methods:</strong> LTV + Cohorts</span>
+                            <span class="ideation-metric"><strong>Scope:</strong> Full framework</span>
+                        </div>
+                    </article>
+
+                    <article class="ideation-card">
+                        <div class="ideation-category">Healthcare</div>
+                        <h3 class="ideation-title">Medical Chatbot</h3>
+                        <p class="ideation-description">
+                            Validated chatbot requirements through clinician interviews, scoped HIPAA-compliant conversational AI with 85%+ intent recognition. Multi-phase rollout plan balancing compliance with user experience.
+                        </p>
+                        <div class="ideation-metrics">
+                            <span class="ideation-metric"><strong>Target:</strong> 85%+ accuracy</span>
+                            <span class="ideation-metric"><strong>Compliance:</strong> HIPAA</span>
+                            <span class="ideation-metric"><strong>Research:</strong> Clinician input</span>
+                        </div>
+                    </article>
+
+                    <article class="ideation-card">
+                        <div class="ideation-category">Startup Strategy</div>
+                        <h3 class="ideation-title">Dual-Product Validation</h3>
+                        <p class="ideation-description">
+                            Led market discovery for fintech (Chaaritra - debt recovery platform) and community networking (Odkhaan). Conducted 80+ customer interviews, competitive analysis, and TAM/SAM/SOM sizing to validate opportunities.
+                        </p>
+                        <div class="ideation-metrics">
+                            <span class="ideation-metric"><strong>Research:</strong> 80+ interviews</span>
+                            <span class="ideation-metric"><strong>Markets:</strong> 2 validated</span>
+                            <span class="ideation-metric"><strong>Method:</strong> Lean startup</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-meta">
+                        <div class="section-number">[02]</div>
+                        <h2 class="section-title">Products</h2>
+                        <p class="section-description">End-to-end product development from concept to production with measurable business impact</p>
+                    </div>
+                    <div></div>
+                </div>
+
+                <div class="product-list">
+                    <article class="product-item">
+                        <div class="product-header">
                             <div>
-                                <h3 class="company-title">Molly Fashion AI</h3>
-                                <p class="role-title">Senior Technical Product Manager, AI</p>
-                                <time class="date-range">2022.01 — Present</time>
+                                <h3 class="product-title">Molly Fashion AI</h3>
+                                <p class="product-role">Senior Technical Product Manager, AI</p>
+                                <time class="product-date">2022.01 — Present</time>
                             </div>
-                            <div class="experience-tag">Current</div>
+                            <div class="product-tag">Current</div>
                         </div>
 
-                        <div class="experience-metrics">
+                        <div class="product-metrics">
                             <div class="metric">
-                                <div class="metric-value">34%</div>
-                                <div class="metric-label">Conversion Up</div>
+                                <div class="metric-value">85%</div>
+                                <div class="metric-label">Style Accuracy</div>
                             </div>
                             <div class="metric">
-                                <div class="metric-value">$2.1M</div>
-                                <div class="metric-label">Revenue Gen</div>
+                                <div class="metric-value">15</div>
+                                <div class="metric-label">Team Size</div>
                             </div>
                             <div class="metric">
                                 <div class="metric-value">500K+</div>
                                 <div class="metric-label">Products</div>
                             </div>
                             <div class="metric">
-                                <div class="metric-value">5x</div>
-                                <div class="metric-label">Deploy Speed</div>
+                                <div class="metric-value">99.5%</div>
+                                <div class="metric-label">Uptime</div>
                             </div>
                         </div>
 
-                        <div class="experience-content">
-                            <ul class="experience-achievements">
-                                <li><strong>Spearheaded vision AI initiative</strong> from concept to production launch, coordinating 3 engineering teams across 8-month timeline, resulting in automated tagging system that processed 500K products and reduced manual QA costs by $120K annually</li>
+                        <div class="product-content">
+                            <ul class="product-achievements">
+                                <li><strong>Led multi-modal AI platform</strong> from concept to production, managing a team of 15 engineers across ML, backend, and infrastructure. Defined product strategy, roadmap, and OKRs combining computer vision, conversational AI, and personalization</li>
                                 
-                                <li><strong>Architected computer vision pipeline</strong> using ResNet-based attribute tagging that automated 85% of manual product categorization, reducing labeling costs by $120K annually across 500K+ SKUs</li>
+                                <li><strong>Owned end-to-end product development</strong> including user research, competitive analysis, feature prioritization (RICE framework), MVP scoping, and phased rollout strategy—delivered 4 major product launches in 24 months</li>
                                 
-                                <li><strong>Built hybrid recommendation system</strong> (collaborative + content-based filtering) that improved click-through rate by 23% and average order value by 18% for 200K+ monthly active users</li>
+                                <li><strong>Designed outfit matching product</strong> using vision models achieving 85%+ style compatibility accuracy with real-time inference <500ms, processing 200K+ daily requests</li>
                                 
-                                <li><strong>Deployed conversational commerce agent</strong> integrating NLP, SQL query generation, and semantic search, handling 40% of customer styling inquiries with 4.2/5 satisfaction score</li>
+                                <li><strong>Built conversational commerce chatbot</strong> with NLP, SQL generation, and search integration handling multi-turn shopping dialogues—40% of styling inquiries with 4.2/5 satisfaction</li>
                                 
-                                <li><strong>Championed MLOps transformation</strong>, establishing CI/CD pipelines, model versioning standards, and monitoring infrastructure that accelerated deployment velocity 5x and reduced production incidents by 40%</li>
+                                <li><strong>Architected hybrid recommendation system</strong> (content-based + collaborative filtering) with A/B testing framework, improving CTR by 23% and AOV by 18% for 200K+ MAU</li>
                                 
-                                <li><strong>Partnered with executive stakeholders</strong> to build business case for conversational commerce, presenting technical feasibility assessments and ROI projections that secured $800K investment</li>
+                                <li><strong>Developed automated tagging pipeline</strong> using ResNet, reducing manual labeling by 80% and scaling product catalog metadata enrichment to 500K+ SKUs</li>
                                 
-                                <li><strong>Mentored team of 5 ML engineers</strong>, conducting code reviews, defining technical standards, and fostering culture of experimentation that improved model iteration speed by 60%</li>
+                                <li><strong>Established MLOps infrastructure</strong> with CI/CD, model monitoring, and versioning—reduced deployment cycles from weeks to 2 days with 99.5% uptime</li>
+                                
+                                <li><strong>Drove agile product management</strong>, conducting daily standups, sprint planning, and retrospectives—improved team velocity by 60% through experimentation culture</li>
                             </ul>
 
                             <div class="tech-stack">
@@ -851,23 +1029,23 @@
                                 <div class="tech-tag">Recommenders</div>
                                 <div class="tech-tag">MLOps</div>
                                 <div class="tech-tag">CI/CD</div>
-                                <div class="tech-tag">Strategy</div>
-                                <div class="tech-tag">Leadership</div>
+                                <div class="tech-tag">A/B Testing</div>
+                                <div class="tech-tag">Product Strategy</div>
                             </div>
                         </div>
                     </article>
 
-                    <article class="experience-item">
-                        <div class="experience-header">
+                    <article class="product-item">
+                        <div class="product-header">
                             <div>
-                                <h3 class="company-title">Tax Form OCR System</h3>
-                                <p class="role-title">ML Product Manager</p>
-                                <time class="date-range">2021.03 — 2021.12</time>
+                                <h3 class="product-title">Tax Form OCR System</h3>
+                                <p class="product-role">ML Product Manager</p>
+                                <time class="product-date">2021.03 — 2021.12</time>
                             </div>
-                            <div class="experience-tag">Fintech</div>
+                            <div class="product-tag">Fintech</div>
                         </div>
 
-                        <div class="experience-metrics">
+                        <div class="product-metrics">
                             <div class="metric">
                                 <div class="metric-value">94%</div>
                                 <div class="metric-label">Accuracy</div>
@@ -878,58 +1056,58 @@
                             </div>
                             <div class="metric">
                                 <div class="metric-value">61%</div>
-                                <div class="metric-label">Error Down</div>
+                                <div class="metric-label">Error Reduction</div>
                             </div>
                             <div class="metric">
-                                <div class="metric-value">99.2%</div>
-                                <div class="metric-label">SLA</div>
+                                <div class="metric-value">10x</div>
+                                <div class="metric-label">Cost Efficiency</div>
                             </div>
                         </div>
 
-                        <div class="experience-content">
-                            <ul class="experience-achievements">
+                        <div class="product-content">
+                            <ul class="product-achievements">
                                 <li><strong>Delivered document AI solution</strong> under aggressive 6-month deadline, managing technical dependencies across data annotation, model training, and integration workstreams—achieved 94% extraction accuracy, exceeding 85% target</li>
                                 
                                 <li><strong>Fine-tuned document AI models</strong> achieving 94% field extraction accuracy (up from 67% baseline) on 15+ tax form types, eliminating 200+ hours/month of manual data entry</li>
                                 
                                 <li><strong>Engineered editable PDF system</strong> with auto-fill validation logic, reducing form completion errors by 61% and improving user task completion rate from 52% to 89%</li>
                                 
-                                <li><strong>Orchestrated human-in-the-loop workflow design</strong>, collaborating with operations team to balance automation with quality control, maintaining 99.2% accuracy SLA while processing 85K forms monthly at 10x cost efficiency vs. manual processing</li>
+                                <li><strong>Orchestrated human-in-the-loop workflow</strong>, collaborating with operations team to balance automation with quality control—maintained 99.2% accuracy SLA while processing 85K forms monthly at 10x cost efficiency</li>
                                 
-                                <li><strong>Negotiated technical trade-offs</strong> between model complexity and inference latency, conducting cost-benefit analysis that shaped architecture decisions and achieved <2s response time on 95th percentile</li>
+                                <li><strong>Negotiated technical trade-offs</strong> between model complexity and inference latency through cost-benefit analysis, achieving <2s response time on 95th percentile</li>
                             </ul>
 
                             <div class="tech-stack">
                                 <div class="tech-tag">OCR</div>
                                 <div class="tech-tag">Document AI</div>
                                 <div class="tech-tag">Fine-tuning</div>
-                                <div class="tech-tag">PDF Process</div>
+                                <div class="tech-tag">PDF Processing</div>
                                 <div class="tech-tag">HITL</div>
-                                <div class="tech-tag">Workflow</div>
-                                <div class="tech-tag">SLA Mgmt</div>
+                                <div class="tech-tag">Workflow Design</div>
+                                <div class="tech-tag">SLA Management</div>
                                 <div class="tech-tag">Trade-offs</div>
                             </div>
                         </div>
                     </article>
 
-                    <article class="experience-item">
-                        <div class="experience-header">
+                    <article class="product-item">
+                        <div class="product-header">
                             <div>
-                                <h3 class="company-title">Intelligent Tourism Platform</h3>
-                                <p class="role-title">Data Science Product Lead</p>
-                                <time class="date-range">2020.06 — 2021.02</time>
+                                <h3 class="product-title">Intelligent Tourism Platform</h3>
+                                <p class="product-role">Data Science Product Lead</p>
+                                <time class="product-date">2020.06 — 2021.02</time>
                             </div>
-                            <div class="experience-tag">Travel</div>
+                            <div class="product-tag">Travel</div>
                         </div>
 
-                        <div class="experience-metrics">
+                        <div class="product-metrics">
                             <div class="metric">
                                 <div class="metric-value">180%</div>
                                 <div class="metric-label">Engagement</div>
                             </div>
                             <div class="metric">
                                 <div class="metric-value">45K</div>
-                                <div class="metric-label">Trips</div>
+                                <div class="metric-label">Trips Planned</div>
                             </div>
                             <div class="metric">
                                 <div class="metric-value">88%</div>
@@ -941,19 +1119,19 @@
                             </div>
                         </div>
 
-                        <div class="experience-content">
-                            <ul class="experience-achievements">
-                                <li><strong>Pioneered graph-based recommendation architecture</strong>, defining technical requirements, evaluating Neo4j vs. alternatives, and leading proof-of-concept that demonstrated 180% engagement improvement, securing executive buy-in for full build</li>
+                        <div class="product-content">
+                            <ul class="product-achievements">
+                                <li><strong>Pioneered graph-based recommendation architecture</strong>, defining technical requirements, evaluating Neo4j vs. alternatives, and leading proof-of-concept demonstrating 180% engagement improvement—secured executive buy-in</li>
                                 
-                                <li><strong>Developed knowledge graph architecture</strong> using Neo4j and GNN embeddings to model 50K+ points of interest with contextual relationships (seasonality, accessibility, user preferences)</li>
+                                <li><strong>Developed knowledge graph architecture</strong> using Neo4j and GNN embeddings modeling 50K+ points of interest with contextual relationships (seasonality, accessibility, user preferences)</li>
                                 
-                                <li><strong>Implemented ontology-driven recommendation engine</strong> that increased itinerary completion rate by 180% and generated 45K personalized multi-day trips in first 6 months</li>
+                                <li><strong>Implemented ontology-driven recommendation engine</strong>, increasing itinerary completion rate by 180% and generating 45K personalized multi-day trips in first 6 months</li>
                                 
-                                <li><strong>Managed end-to-end product lifecycle</strong> for AI-powered itinerary planner, from user research through beta launch, coordinating data engineering, ML, and frontend teams—achieved 45K trips planned and 88% user satisfaction in first 6 months</li>
+                                <li><strong>Managed end-to-end product lifecycle</strong> for AI-powered itinerary planner from user research through beta launch, coordinating data engineering, ML, and frontend teams</li>
                                 
-                                <li><strong>Built AI agent for dynamic itinerary optimization</strong> using reinforcement learning, adapting real-time to budget constraints, weather, and venue availability with 88% user acceptance</li>
+                                <li><strong>Built AI agent for dynamic itinerary optimization</strong> using reinforcement learning, adapting in real-time to budget constraints, weather, and venue availability with 88% user acceptance</li>
                                 
-                                <li><strong>Established experimentation framework</strong> for personalization algorithms, designing A/B testing infrastructure and metrics dashboards that enabled data-driven iteration and reduced decision-making time by 50%</li>
+                                <li><strong>Established experimentation framework</strong> for personalization algorithms with A/B testing infrastructure and metrics dashboards—reduced decision-making time by 50%</li>
                             </ul>
 
                             <div class="tech-stack">
@@ -963,8 +1141,67 @@
                                 <div class="tech-tag">Ontology</div>
                                 <div class="tech-tag">RL</div>
                                 <div class="tech-tag">A/B Testing</div>
-                                <div class="tech-tag">Lifecycle</div>
+                                <div class="tech-tag">Product Lifecycle</div>
                                 <div class="tech-tag">Metrics</div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-item">
+                        <div class="product-header">
+                            <div>
+                                <h3 class="product-title">Chaaritra & Odkhaan</h3>
+                                <p class="product-role">Co-Founder & Head of Product</p>
+                                <time class="product-date">2019.01 — 2020.05</time>
+                            </div>
+                            <div class="product-tag">Startup</div>
+                        </div>
+
+                        <div class="product-metrics">
+                            <div class="metric">
+                                <div class="metric-value">2</div>
+                                <div class="metric-label">Products</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">80+</div>
+                                <div class="metric-label">Interviews</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">3</div>
+                                <div class="metric-label">Markets</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">0→1</div>
+                                <div class="metric-label">Build</div>
+                            </div>
+                        </div>
+
+                        <div class="product-content">
+                            <ul class="product-achievements">
+                                <li><strong>Drove product strategy for dual-product startup</strong> targeting financial services and community networking. Led market validation, product development, and go-to-market execution applying lean startup methodologies</li>
+                                
+                                <li><strong>Conducted market discovery across 3 sectors</strong> (financial recovery, community networking, pharma B2B) through competitive analysis and TAM/SAM/SOM sizing—selected opportunities based on market size and founder-market fit</li>
+                                
+                                <li><strong>Executed 80+ customer discovery interviews</strong> with MSMEs, collection agencies, and community organizers to validate problem-solution fit and product requirements</li>
+                                
+                                <li><strong>Designed Chaaritra - debt recovery platform</strong> with integrated workflow: defaulter registry, secure document filing, legal marketplace, payment tracking (Tally integration), and credit score building</li>
+                                
+                                <li><strong>Created Odkhaan - community networking app</strong> enabling organization-based networking with event management and business referral capabilities, differentiated through trust-layer and B2B focus</li>
+                                
+                                <li><strong>Managed cross-functional team</strong> through agile development cycles with daily standups, sprint retrospectives, and iterative releases—established quarterly OKRs aligned to growth and engagement targets</li>
+                                
+                                <li><strong>Built pitch decks and business cases</strong> for investor conversations, articulating product vision, market opportunity, competitive positioning, and traction metrics</li>
+                            </ul>
+
+                            <div class="tech-stack">
+                                <div class="tech-tag">Market Validation</div>
+                                <div class="tech-tag">Lean Startup</div>
+                                <div class="tech-tag">User Research</div>
+                                <div class="tech-tag">Product Strategy</div>
+                                <div class="tech-tag">Agile</div>
+                                <div class="tech-tag">OKRs</div>
+                                <div class="tech-tag">Roadmapping</div>
+                                <div class="tech-tag">0→1 Build</div>
                             </div>
                         </div>
                     </article>
@@ -976,7 +1213,7 @@
             <div class="container">
                 <div class="section-header">
                     <div class="section-meta">
-                        <div class="section-number">[02]</div>
+                        <div class="section-number">[03]</div>
                         <h2 class="section-title">Skills</h2>
                         <p class="section-description">Comprehensive technical and leadership capabilities across the ML product lifecycle</p>
                     </div>
